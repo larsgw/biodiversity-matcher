@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Wikidata Biodiversity matcher</title>
         <meta name="description" content="Match Wikimedia pictures to taxonomic groups">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
@@ -12,8 +13,11 @@
         </header>
 
         <form id="selection">
-            <fieldset id="taxaSelect">
-            </fieldset>
+            <details>
+                <summary>Exclude taxa</summary>
+                <fieldset id="taxaSelect">
+                </fieldset>
+            </details>
 
             <button type="submit">Next picture</button>
 
