@@ -1,0 +1,8 @@
+#taxaSelect, #taxaSelect fieldset, #taxaSelect label {
+    float: left;
+    clear: left;
+}
+
+#selection output img {
+    width: 100%;
+}

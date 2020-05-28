@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Wikidata Biodiversity matcher</title>
+        <meta name="description" content="Match Wikimedia pictures to taxonomic groups">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <header>
+            <h1>Wikidata Biodiversity matcher</h1>
+        </header>
+
+        <form id="selection">
+            <fieldset id="taxaSelect">
+            </fieldset>
+
+            <button type="submit">Next picture</button>
+
+            <output name="images"></output>
+        </form>
+
+        <form id="guess">
+            <fieldset id="taxaGuess">
+            </fieldset>
+
+            <button type="submit">Guess</button>
+
+            <output name="result"></output>
+        </form>
+
+        <script src="wikibase-sdk.min.js"></script>
+        <script src="wikidata-sdk.min.js"></script>
+        <script src="index.js" charset="utf-8"></script>
+    </body>
+</html>
