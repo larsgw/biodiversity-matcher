@@ -61,10 +61,21 @@ function appendTaxaToForm (taxa, element, type) {
         if (typeof taxa[taxon] === 'object') {
             const group = document.createElement('fieldset')
             const legend = document.createElement('legend')
-            const label = document.createElement('label')
-            const text = document.createTextNode(taxon)
-            label.appendChild(text)
-            legend.appendChild(label)
+            if (type === 'checkbox') {
+                const label = document.createElement('label')
+                const input = document.createElement('input')
+                input.type = type
+                input.checked = true
+                input.addEventListener('change', function () {
+                    group.disabled = !group.disabled
+                })
+                label.appendChild(input)
+                const text = document.createTextNode(taxon)
+                label.appendChild(text)
+                legend.appendChild(label)
+            } else {
+                legend.innerText = taxon
+            }
             group.appendChild(legend)
             appendTaxaToForm(taxa[taxon], group, type)
             element.appendChild(group)
@@ -90,8 +101,20 @@ function randomSample (array) {
     return array[Math.floor(Math.random() * array.length)]
 }
 
+function isEnabled (element) {
+    if (element.disabled) {
+        return false
+    } else if (element.tagName === 'FORM') {
+        return true
+    }
+
+    return isEnabled(element.parentNode)
+}
+
 function getTaxon (form) {
-    const taxa = Array.prototype.map.call(selection.taxon, input => input.value)
+    const taxa = Array.prototype.filter
+        .call(selection.taxon, input => input.checked && isEnabled(input))
+        .map(input => input.value)
     return randomSample(taxa)
 }
 
@@ -166,8 +189,6 @@ function createCredits (data, element) {
 
 selection.onsubmit = async function (e) {
     e.preventDefault()
-    selection.disabled = true
-    guess.disabled = true
     const taxon = getTaxon(selection)
     guessData.data = await getGuessData(taxon)
     guessData.imageData = await getImageData(guessData.data.image)
