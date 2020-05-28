@@ -6,9 +6,9 @@ const taxa = {
         Pycnogonida: 'Q19106',
         Xiphosura: 'Q19430',
         Arachnida: {
-            Scorpionida: 'Q19119', // (Pseudoscorpiones), other 'Q30749508'
+            Scorpionida: 'Q19125', // (Scorpiones), other 'Q30749508'
             Opiliones: 'Q19116',
-            Pseudoscorpionida: 'Q35135521',
+            Pseudoscorpionida: 'Q19119', // (Pseudoscorpiones), other 'Q35135521'
             Aranea: 'Q1357',
             Acari: {
                 Acariformes: 'Q1341457',
@@ -35,26 +35,25 @@ const taxa = {
         Branchiura: 'Q841641',
         Copepoda: 'Q189973',
         Ostracoda: 'Q276412',
-        // Theostraca: {
-        //     Cirripeda: {
-        //         Sessilia: ,
-        //         Pedunculata: ,
-        //         Rhizocephala:
-        //     }
-        // },
-        // Malacostraca: {
-        //     Isopoda: ,
-        //     Amphipoda: ,
-        //     Mysidacea: ,
-        //     Decapoda: {
-        //         Caridea: ,
-        //         Astacidea: ,
-        //         Anomura: ,
-        //         Brachyura:
-        //     }
-        // }
-    },
-    // Hexapoda:
+        Theostraca: {
+            Cirripeda: {
+                Sessilia: 'Q3175015',
+                Pedunculata: 'Q3689',
+                Rhizocephala: 'Q2341208'
+            }
+        },
+        Malacostraca: {
+            Isopoda: 'Q206338',
+            Amphipoda: 'Q193418',
+            Mysidacea: 'Q13411080', // (Mysida), other 'Q1208947'
+            Decapoda: {
+                Caridea: 'Q80117',
+                Astacidea: 'Q929163',
+                Anomura: 'Q526867',
+                Brachyura: 'Q40802'
+            }
+        }
+    }
 }
 
 function appendTaxaToForm (taxa, element, type) {
@@ -175,7 +174,7 @@ selection.onsubmit = async function (e) {
 
     const figure = document.createElement('figure')
     const img = document.createElement('img')
-    img.src = guessData.data.image
+    img.src = guessData.data.image.replace(/^http:/, 'https:')
     figure.appendChild(img)
     const caption = document.createElement('caption')
     createCredits(guessData.imageData, caption)
