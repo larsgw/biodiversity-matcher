@@ -1,7 +1,7 @@
 const guessData = {}
 const cache = {}
 
-const taxa = {
+const data = {
     Chelicerata: {
         Pycnogonida: 'Q19106',
         Xiphosura: 'Q19430',
@@ -53,6 +53,87 @@ const taxa = {
                 Brachyura: 'Q40802'
             }
         }
+    },
+    Hexapoda: {
+        Entognatha: {
+            Collembola: 'Q190701',
+            Diplura: 'Q221563',
+            Protura: 'Q271631',
+        },
+        Insecta: {
+            Apterygota: {
+                Archaeognatha: 'Q637179',
+                Zygentoma: 'Q30111',
+            },
+            Pterygota: {
+                Exopterygota: {
+                    Paleoptera: {
+                        Ephemoptera: 'Q174273',
+                        Odonata: {
+                            Zygoptera: 'Q230502',
+                            Anisoptera: 'Q80066',
+                        }
+                    },
+                    Neoptera: {
+                        Plecoptera: 'Q203547',
+                        Dermaptera: 'Q13676',
+                        Orthoptera: {
+                            Ensifera: {
+                                Tettigoniidae: 'Q727919',
+                                Gryllidae: 'Q47328',
+                                Gryllotalpidae: 'Q199765'
+                            },
+                            Caelifera: {
+                                Acrididae: 'Q7618284',
+                                Tetrigidae: 'Q768200'
+                            }
+                        },
+                        Dictyoptera: {
+                            // Blattaria: 'Q25309',
+                            Isoptera: 'Q546583',
+                            Mantodea: 'Q131250'
+                        },
+                        Psocoptera: 'Q271623',
+                        Phthiraptera: 'Q6481228',
+                        Thysanoptera: 'Q185628',
+                        Hemiptera: {
+                            Auchenorrhyncha: 'Q202890',
+                            Heteroptera: 'Q27191',
+                            Sternorrhyncha: 'Q621840'
+                        }
+                    }
+                },
+                Endopterygota: {
+                    Coleoptera: {
+                        Adephaga: 'Q131060',
+                        Polyphaga: 'Q147877'
+                    },
+                    Rhaphidioptera: 'Q217516',
+                    Megaloptera: 'Q194025',
+                    Planipennia: {
+                        Chrysopidae: 'Q623727',
+                        Myrmeleonidae: 'Q231439'
+                    },
+                    Hymenoptera: {
+                        Symphyta: 'Q615290',
+                        // Parasitica: 'Q387031',
+                        Aculeata: 'Q1251421'
+                    },
+                    Strepsiptera: 'Q327144',
+                    Mecoptera: 'Q205301',
+                    Siphonaptera: 'Q388162',
+                    Diptera: {
+                        Nematocera: 'Q27605',
+                        Brachycera: {
+                            // Orthorrhapha: ,
+                            Cyclorrhapha: 'Q14857444'
+                        }
+                    },
+                    Trichoptera: 'Q184616',
+                    Lepidoptera: 'Q28319'
+                }
+            }
+        }
     }
 }
 
@@ -68,12 +149,15 @@ function appendTaxaToForm (taxa, element, type) {
                 input.checked = true
                 input.addEventListener('change', function () {
                     group.disabled = !group.disabled
+                    const guessEquivalent = document.querySelector(`[data-taxon="${taxon}"]`)
+                    guessEquivalent.disabled = group.disabled
                 })
                 label.appendChild(input)
                 const text = document.createTextNode(taxon)
                 label.appendChild(text)
                 legend.appendChild(label)
             } else {
+                group.dataset.taxon = taxon
                 legend.innerText = taxon
             }
             group.appendChild(legend)
@@ -93,9 +177,6 @@ function appendTaxaToForm (taxa, element, type) {
         }
     }
 }
-
-appendTaxaToForm(taxa, taxaSelect, 'checkbox')
-appendTaxaToForm(taxa, taxaGuess, 'radio')
 
 function randomSample (array) {
     return array[Math.floor(Math.random() * array.length)]
@@ -226,3 +307,22 @@ This is a <i>${species.label}</i>, part of <i>${taxon.name}</i>`
         guess.result.innerText = `Guess again.`
     }
 }
+
+const params = new URLSearchParams(location.search)
+const taxa = params.getAll('taxon').reduce((taxa, taxon) => {
+    const steps = taxon.replace(/\b./g, m => m.toUpperCase()).split('.')
+    const last = steps.pop()
+
+    let cursor = data
+    let copy = taxa
+    for (const step of steps) {
+        cursor = cursor[step]
+        copy = copy[step] || (copy[step] = {})
+    }
+    copy[last] = cursor[last]
+
+    return taxa
+}, {})
+
+appendTaxaToForm(taxa, taxaSelect, 'checkbox')
+appendTaxaToForm(taxa, taxaGuess, 'radio')

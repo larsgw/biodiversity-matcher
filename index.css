@@ -33,6 +33,10 @@ figure caption {
     width: 100%;
 }
 
+#guess fieldset[disabled] {
+    display: none;
+}
+
 #guess output {
     border: 2px solid;
     border-radius: 1em;
