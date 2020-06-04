@@ -309,20 +309,24 @@ This is a <i>${species.label}</i>, part of <i>${taxon.name}</i>`
 }
 
 const params = new URLSearchParams(location.search)
-const taxa = params.getAll('taxon').reduce((taxa, taxon) => {
-    const steps = taxon.replace(/\b./g, m => m.toUpperCase()).split('.')
-    const last = steps.pop()
+let taxa = data
 
-    let cursor = data
-    let copy = taxa
-    for (const step of steps) {
-        cursor = cursor[step]
-        copy = copy[step] || (copy[step] = {})
-    }
-    copy[last] = cursor[last]
+if (params.has('taxon')) {
+  taxa = params.getAll('taxon').reduce((taxa, taxon) => {
+      const steps = taxon.replace(/\b./g, m => m.toUpperCase()).split('.')
+      const last = steps.pop()
 
-    return taxa
-}, {})
+      let cursor = data
+      let copy = taxa
+      for (const step of steps) {
+          cursor = cursor[step]
+          copy = copy[step] || (copy[step] = {})
+      }
+      copy[last] = cursor[last]
+
+      return taxa
+  }, {})
+}
 
 appendTaxaToForm(taxa, taxaSelect, 'checkbox')
 appendTaxaToForm(taxa, taxaGuess, 'radio')
