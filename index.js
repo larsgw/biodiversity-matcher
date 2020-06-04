@@ -28,7 +28,7 @@ const data = {
     Crustacea: {
         Branchiopoda: {
             Anostraca: 'Q853383',
-            Cyclestherida: 'Q768012', // (Diplostraca), other 'Q21217579'
+            // Cyclestherida: 'Q21217579', // no results
             Notostraca: 'Q3344541',
             Cladocera: 'Q391240'
         },
@@ -89,7 +89,7 @@ const data = {
                             }
                         },
                         Dictyoptera: {
-                            // Blattaria: 'Q25309',
+                            Blattaria: 'Q139689' // (Blattidae), other 'Q25309'
                             Isoptera: 'Q546583',
                             Mantodea: 'Q131250'
                         },
