@@ -137,6 +137,23 @@ const data = {
     }
 }
 
+function getPaths (data, prefix) {
+    if (typeof data === 'object') {
+        const paths = []
+        for (const taxon in data) {
+            paths.push(...getPaths(data[taxon], prefix.concat(taxon)))
+        }
+        return paths
+    } else {
+        return [prefix.concat(data)]
+    }
+}
+
+const taxaPaths = getPaths(data, []).reduce((paths, path) => {
+    paths[path.pop()] = path
+    return paths
+}, {})
+
 function appendTaxaToForm (taxa, element, type) {
     for (const taxon in taxa) {
         if (typeof taxa[taxon] === 'object') {
@@ -200,16 +217,23 @@ function getTaxon (form) {
 }
 
 function getSparql (taxon) {
-    return `SELECT ?taxon ?taxonName ?taxonLabel ?species ?speciesLabel ?image WHERE {
-        BIND(wd:${taxon} AS ?taxon)
-        ?taxon wdt:P225 ?taxonName .
-        ?species wdt:P171+ ?taxon .
-        ?species wdt:P105 wd:Q7432 .
-        ?species wdt:P18 ?image .
+    return `SELECT ?t ?tName ?tLabel ?s ?sName ?sLabel ?image WHERE {
+        BIND(wd:${taxon} AS ?t)
+        ?t wdt:P225 ?tName .
+        ?s wdt:P105 wd:Q7432 .
+        ?s wdt:P171+ ?t .
+        ?s wdt:P225 ?sName .
+        ?s wdt:P18 ?image .
         FILTER REGEX(STR(?image), "\.(jpg|jpeg|png|gif)$", "i")
         SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
     } LIMIT 10`
 }
+
+const selection = document.getElementById('selection')
+const taxaSelect = document.getElementById('taxaSelect')
+const guess = document.getElementById('guess')
+const giveup = document.getElementById('giveup')
+const taxaGuess = document.getElementById('taxaGuess')
 
 async function getGuessData (taxon) {
     if (!(taxon in cache) || cache[taxon].length === 0) {
@@ -292,18 +316,39 @@ selection.onsubmit = async function (e) {
     selection.images.appendChild(figure)
 }
 
+function createTaxonLabel (taxon) {
+    const base = `<i>${taxon.name}</i>`
+    return taxon.name === taxon.label ? base : base + ` (${taxon.label})`
+}
+
+function createSpeciesLabel (species, taxon) {
+    return `This is a ${createTaxonLabel(species)}, part of ${createTaxonLabel(taxon)}`
+}
+
+function getCommonParent (guess, expected) {
+    let i = 0
+    while (taxaPaths[guess][i] === taxaPaths[expected][i]) {
+        i++
+    }
+
+    return taxaPaths[guess][i - 1]
+}
+
 guess.onsubmit = function (e) {
     e.preventDefault()
-    const { taxon, species } = guessData.data
+    const { t: taxon, s: species } = guessData.data
     if (taxon.value === guess.taxon.value) {
         guess.result.dataset.success = true
-        guess.result.innerHTML = `That is correct!
-This is a <i>${species.label}</i>, part of <i>${taxon.name}</i>`
-        if (taxon.name !== taxon.label) {
-            guess.result.innerHTML += ` (${taxon.label})`
-        }
+        guess.result.innerHTML = `That is correct! ${createSpeciesLabel(species, taxon)}`
+        return
+    }
+
+    guess.result.dataset.success = false
+    const commonParent = getCommonParent(guess.taxon.value, taxon.value)
+
+    if (commonParent) {
+        guess.result.innerText = `This is indeed ${commonParent}, but a different subtaxon.`
     } else {
-        guess.result.dataset.success = false
         guess.result.innerText = `Guess again.`
     }
 }
