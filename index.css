@@ -57,3 +57,8 @@ figure caption {
 #guess output:empty {
     display: none;
 }
+
+#guess button[type="button"] {
+    background-color: lightgrey;
+    float: right;
+}

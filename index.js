@@ -353,6 +353,12 @@ guess.onsubmit = function (e) {
     }
 }
 
+giveup.onclick = function () {
+    guess.result.dataset.success = false
+    const { t: taxon, s: species } = guessData.data
+    guess.result.innerHTML = createSpeciesLabel(species, taxon)
+}
+
 const params = new URLSearchParams(location.search)
 let taxa = data
 
