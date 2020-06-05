@@ -89,7 +89,7 @@ const data = {
                             }
                         },
                         Dictyoptera: {
-                            Blattaria: 'Q139689' // (Blattidae), other 'Q25309'
+                            Blattaria: 'Q139689', // (Blattidae), other 'Q25309'
                             Isoptera: 'Q546583',
                             Mantodea: 'Q131250'
                         },
