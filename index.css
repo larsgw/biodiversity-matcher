@@ -37,19 +37,19 @@ figure caption {
     display: none;
 }
 
-#guess output {
+output[data-success] {
     border: 2px solid;
     border-radius: 1em;
     display: block;
     padding: 1em;
 }
 
-#guess output[data-success="true"] {
+output[data-success="true"] {
     border-color: green;
     background-color: lightgreen;
 }
 
-#guess output[data-success="false"] {
+output[data-success="false"] {
     border-color: red;
     background-color: pink;
 }
