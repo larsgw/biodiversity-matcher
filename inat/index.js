@@ -230,7 +230,7 @@ async function getGuessData (taxon, lifestage) {
     const key = taxon + '|' + lifestage
 
     if (!(key in cache) || cache[key].length === 0) {
-        const url = new URL('http://api.inaturalist.org/v1/observations')
+        const url = new URL('https://api.inaturalist.org/v1/observations')
         const options = {
             photos: true,
             taxon_id: taxon,
