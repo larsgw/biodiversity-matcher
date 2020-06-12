@@ -367,20 +367,24 @@ const params = new URLSearchParams(location.search)
 let taxa = data
 
 if (params.has('taxon')) {
-  taxa = params.getAll('taxon').reduce((taxa, taxon) => {
-      const steps = taxon.replace(/\b./g, m => m.toUpperCase()).split('.')
-      const last = steps.pop()
+    taxa = params.getAll('taxon').reduce((taxa, taxon) => {
+        const steps = taxon.replace(/\b./g, m => m.toUpperCase()).split('.')
+        const last = steps.pop()
 
-      let cursor = data
-      let copy = taxa
-      for (const step of steps) {
-          cursor = cursor[step]
-          copy = copy[step] || (copy[step] = {})
-      }
-      copy[last] = cursor[last]
+        let cursor = data
+        let copy = taxa
+        for (const step of steps) {
+            cursor = cursor[step]
+            copy = copy[step] || (copy[step] = {})
+        }
+        copy[last] = cursor[last]
 
-      return taxa
-  }, {})
+        return taxa
+    }, {})
+}
+
+if (params.has('lifestage')) {
+    selection.lifestage.value = params.get('lifestage')
 }
 
 appendTaxaToForm(taxa, taxaSelect, 'checkbox')
