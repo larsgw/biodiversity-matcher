@@ -214,8 +214,10 @@ function getTaxon (form) {
         .map(input => input.value)
 
     const taxon = randomSample(taxa)
-    const lifestage = taxaPaths[taxon].includes('Endopterygota') || taxaPaths[taxon].includes('Paleoptera') ? form.lifestage.value : ''
-    return [taxon, lifestage]
+    const lifestage = form.lifestage.value
+    const showNymph = lifestage.includes('5') && taxaPaths[taxon].includes('Paleoptera')
+    const showLarva = lifestage.includes('6') && taxaPaths[taxon].includes('Endopterygota')
+    return [taxon, showNymph ? '5' : showLarva ? '6' : '']
 }
 
 const selection = document.getElementById('selection')
