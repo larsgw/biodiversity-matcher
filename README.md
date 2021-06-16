@@ -1,8 +1,10 @@
 # Wikimedia Biodiversity matcher
 
-Do your best to match Wikimedia pictures to taxonomic groups!
+Do your best to match open-licensed pictures to taxonomic groups!
 
-https://larsgw.github.io/biodiversity-matcher/
+  - Arthropoda, Wikimedia: https://larsgw.github.io/biodiversity-matcher/
+  - Flora, Wikimedia: https://larsgw.github.io/biodiversity-matcher/flora/
+  - Arthropoda, iNaturalist: https://larsgw.github.io/biodiversity-matcher/inat/
 
 ---
 
