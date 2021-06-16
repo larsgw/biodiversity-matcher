@@ -215,7 +215,7 @@ function getTaxon (form) {
 
     const taxon = randomSample(taxa)
     const lifestage = form.lifestage.value
-    const showNymph = lifestage.includes('5') && taxaPaths[taxon].includes('Paleoptera')
+    const showNymph = lifestage.includes('5') && taxaPaths[taxon].includes('Exopterygota')
     const showLarva = lifestage.includes('6') && taxaPaths[taxon].includes('Endopterygota')
     return [taxon, showNymph ? '5' : showLarva ? '6' : '']
 }
