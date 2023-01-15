@@ -17,7 +17,7 @@ const data = {
   Gastropoda: {
     'Invasive Gastropoda': {
       'Potamopyrgus antipodarum': 129201,
-      'Physa acuta': 563819,
+      'Physa acuta/Physella acuta': 563819,
       'Lithoglyphus naticoides': 150740,
       'Menetus dilatatus': 336768,
     },
