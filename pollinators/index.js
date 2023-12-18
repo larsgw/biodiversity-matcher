@@ -15,7 +15,7 @@ const data = {
             '<i>Bombus lapidarius</i> (steenhommel)': 57619,
             '<i>Bombus pascuorum</i> (akkerhommel)': 55637,
             '<i>Bombus pratorum</i> (weidehommel)': 124910,
-            '<i>Bombus terrestris</i> (aardhommel)': 57516,
+            '<i>Bombus terrestris</i>-complex (aardhommels)': '57516,1092510',
             '<i>Psithyrus</i> (koekoekshommels)': 538893,
             other: 52775
         },
