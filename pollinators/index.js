@@ -207,6 +207,8 @@ async function getGuessData (taxon) {
 
 selection.onsubmit = async function (e) {
     e.preventDefault()
+    const submitButton = selection.querySelector('button[type="submit"]')
+    submitButton.disabled = true
 
     delete selection.images.dataset.success
     while (selection.images.firstChild) {
@@ -265,6 +267,8 @@ selection.onsubmit = async function (e) {
     figure.appendChild(figcaption)
 
     selection.images.appendChild(figure)
+
+    submitButton.disabled = false
 }
 
 function createTaxonLabel (taxon) {
