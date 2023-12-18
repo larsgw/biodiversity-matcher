@@ -34,32 +34,32 @@ const data = {
         other: 630955
     },
     'Syrphidae (zweefvliegen)': {
-        'Anasimyia/Eurimyia lineata': 1144215,
-        'Cheilosia (gitjes)': 124483,
-        'Chrysotoxum (fopwespen)': 119997,
-        'Episyrphus balteatus (snor-/marmelade-/pyjamazweefvlieg)': 52482,
-        'Eristalis (bijvliegen)': {
-            'Eristalis intricaria (hommelbijvlieg)': 497713,
+        '<i>Anasimyia/Eurimyia lineata</i>': 1144215,
+        '<i>Cheilosia</i> (gitjes)': 124483,
+        '<i>Chrysotoxum</i> (fopwespen)': 119997,
+        '<i>Episyrphus balteatus</i> (snor-/marmelade-/pyjamazweefvlieg)': 52482,
+        '<i>Eristalis</i> (bijvliegen)': {
+            '<i>Eristalis intricaria</i> (hommelbijvlieg)': 497713,
             other: 52491
         },
-        'Eristalinus (vlekogen)': 145541,
-        'Eupeodes (kommazwevers)': 69190,
-        'Helophilus (pendelzweefvliegen)': 52487,
-        'Melanostoma (driehoekzweefvliegen)': 70406,
-        'Merodon equestris (narcissenvlieg)': 194786,
-        'Myathropa florea (doodskopzweefvlieg)': 70211,
-        'Rhingia campestris (gewone snuitvlieg)': 355014,
-        'Scaeva pyrastri (witte halvemaanzwever)': 52160,
-        'Sericomyia (veenzweefvliegen)': 68133,
-        'Sphaerophoria (langlijven)': 52964,
-        'Syritta pipiens (menuetzweefvlieg)': 81979,
-        'Syrphus (bandzweefvliegen)': 52489,
-        'Volucella (reuzen)': {
-            'Volucella pellucens (ivoorzweefvlieg)': 52480,
-            'Volucella zonaria (stadreus)': 343983,
+        '<i>Eristalinus</i> (vlekogen)': 145541,
+        '<i>Eupeodes</i> (kommazwevers)': 69190,
+        '<i>Helophilus</i> (pendelzweefvliegen)': 52487,
+        '<i>Melanostoma</i> (driehoekzweefvliegen)': 70406,
+        '<i>Merodon equestris</i> (narcissenvlieg)': 194786,
+        '<i>Myathropa florea</i> (doodskopzweefvlieg)': 70211,
+        '<i>Rhingia campestris</i> (gewone snuitvlieg)': 355014,
+        '<i>Scaeva pyrastri</i> (witte halvemaanzwever)': 52160,
+        '<i>Sericomyia</i> (veenzweefvliegen)': 68133,
+        '<i>Sphaerophoria</i> (langlijven)': 52964,
+        '<i>Syritta pipiens</i> (menuetzweefvlieg)': 81979,
+        '<i>Syrphus</i> (bandzweefvliegen)': 52489,
+        '<i>Volucella</i> (reuzen)': {
+            '<i>Volucella pellucens</i> (ivoorzweefvlieg)': 52480,
+            '<i>Volucella zonaria</i> (stadreus)': 343983,
             other: 52481
         },
-        'Xylota/Chalcosyrphus (bladlopers)': 488420,
+        '<i>Xylota/Chalcosyrphus</i> (bladlopers)': 488420,
         other: 49995
     }
 }
