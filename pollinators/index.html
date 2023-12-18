@@ -15,17 +15,26 @@
                     grid-template-columns: 1fr 1fr;
                     grid-template-rows: auto 1fr;
                     grid-gap: 1em;
+                    height: 100vh;
                     max-width: none;
+                    overflow: hidden;
                 }
                 header {
                     grid-area: header;
                 }
                 #selection {
+                    align-items: flex-start;
+                    display: flex;
+                    flex-direction: column;
                     grid-area: quiz;
                     margin-top: 2em;
                 }
+                #selection output {
+                    overflow-y: auto;
+                }
                 #guess {
                     grid-area: answers;
+                    overflow-y: auto;
                 }
                 #guess button[type="submit"] {
                     float: right;
