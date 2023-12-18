@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Pollinator quiz</title>
+        <meta name="description" content="Match iNaturalist pictures to pollinator species">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../index.css">
+        <link rel="stylesheet" href="../inat/index.css">
+        <style>
+            @media (min-width: 800px) {
+                body {
+                    display: grid;
+                    grid-template-areas: "header quiz" "answers quiz";
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: auto 1fr;
+                    grid-gap: 1em;
+                    max-width: none;
+                }
+                header {
+                    grid-area: header;
+                }
+                #selection {
+                    grid-area: quiz;
+                    margin-top: 2em;
+                }
+                #guess {
+                    grid-area: answers;
+                }
+                #guess button[type="submit"] {
+                    float: right;
+                }
+                #guess button[type="button"] {
+                    float: none;
+                }
+            }
+
+            fieldset details {
+                clear: left;
+                float: left;
+                padding-left: 2em;
+            }
+
+            fieldset details summary {
+                margin-left: -2em;
+            }
+
+            fieldset details input[type="radio"],
+            fieldset details input[type="checkbox"] {
+                margin-left: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Pollinator quiz</h1>
+            <p>Do your best to recognize these pollinators!</p>
+            <p>
+                <a href="https://github.com/larsgw/biodiversity-matcher">Source code</a>
+                  ·
+                <a href="https://github.com/larsgw/biodiversity-matcher/blob/master/LICENSE">License</a>
+                  ·
+                <a href="https://github.com/larsgw/biodiversity-matcher/issues">Feedback</a>
+            </p>
+            <hr>
+        </header>
+
+        <form id="selection">
+            <details>
+                <summary>Include/exclude species</summary>
+                <fieldset id="taxaSelect">
+                </fieldset>
+            </details>
+
+            <button type="submit">Next picture</button>
+
+            <output name="images"></output>
+        </form>
+
+        <form id="guess">
+            <output name="result"></output>
+
+            <button type="submit">Guess</button>
+            <button id="giveup" type="button">Give up</button>
+
+            <fieldset id="taxaGuess">
+            </fieldset>
+        </form>
+
+        <script src="index.js" charset="utf-8"></script>
+    </body>
+</html>
