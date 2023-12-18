@@ -84,11 +84,9 @@ const taxaPaths = getPaths(data, []).reduce((paths, path) => {
 function appendTaxaToForm (taxa, element, type) {
     for (const taxon in taxa) {
         if (typeof taxa[taxon] === 'object') {
-            let group
-            let legend
+            const group = document.createElement('fieldset')
+            const legend = document.createElement('legend')
             if (type === 'checkbox') {
-                group = document.createElement('fieldset')
-                legend = document.createElement('legend')
                 const label = document.createElement('label')
                 const input = document.createElement('input')
                 input.type = type
@@ -102,8 +100,6 @@ function appendTaxaToForm (taxa, element, type) {
                 label.prepend(input)
                 legend.appendChild(label)
             } else {
-                group = document.createElement('details')
-                legend = document.createElement('summary')
                 group.dataset.taxon = taxon
                 legend.innerHTML = taxon
             }
