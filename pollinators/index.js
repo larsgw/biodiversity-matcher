@@ -192,7 +192,7 @@ async function getGuessData (taxon) {
             photo_license: licenses,
             quality_grade: 'research',
             locale: 'nl',
-            per_page: 10
+            per_page: 50
         }
 
         if (exclude.length) {
