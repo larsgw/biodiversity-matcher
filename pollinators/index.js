@@ -150,6 +150,18 @@ const taxaGuess = document.getElementById('taxaGuess')
 
 const licenses = ['cc-by', 'cc-by-nc', 'cc0', 'cc-by-sa', 'cc-by-nc-sa']
 
+function getTaxonIds (group) {
+    if (typeof group === 'object') {
+        const ids = []
+        for (const name in group) {
+            ids.push(...getTaxonIds(group[name]))
+        }
+        return ids
+    }
+
+    return [group]
+}
+
 async function getGuessData (taxon) {
     const key = taxon
 
@@ -166,7 +178,7 @@ async function getGuessData (taxon) {
             }
             for (const name in group) {
                 if (name !== 'other') {
-                    exclude.push(group[name])
+                    exclude.push(...getTaxonIds(group[name]))
                 }
             }
         }
