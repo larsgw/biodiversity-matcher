@@ -51,7 +51,7 @@ const data = {
         '<i>Rhingia campestris</i> (gewone snuitvlieg)': 355014,
         '<i>Scaeva pyrastri</i> (witte halvemaanzwever)': 52160,
         '<i>Sericomyia</i> (veenzweefvliegen)': 68133,
-        '<i>Sphaerophoria</i> (langlijven)': 52964,
+        '<i>Sphaerophoria</i> (langlijven)': 52965,
         '<i>Syritta pipiens</i> (menuetzweefvlieg)': 81979,
         '<i>Syrphus</i> (bandzweefvliegen)': 52489,
         '<i>Volucella</i> (reuzen)': {
