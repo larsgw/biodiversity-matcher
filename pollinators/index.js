@@ -37,6 +37,7 @@ const data = {
         '<i>Anasimyia/Eurimyia lineata</i>': 1144215,
         '<i>Cheilosia</i> (gitjes)': 124483,
         '<i>Chrysotoxum</i> (fopwespen)': 119997,
+        '<i>Dasysyrphus</i> (wimperzweefvliegen)': 346004,
         '<i>Episyrphus balteatus</i> (snor-/marmelade-/pyjamazweefvlieg)': 52482,
         '<i>Eristalis</i> (bijvliegen)': {
             '<i>Eristalis intricaria</i> (hommelbijvlieg)': 497713,
