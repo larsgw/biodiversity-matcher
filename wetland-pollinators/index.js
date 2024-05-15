@@ -307,7 +307,7 @@ selection.onsubmit = async function (e) {
     figure.appendChild(container)
     const figcaption = document.createElement('figcaption')
     const a = document.createElement('a')
-    a.href = `https://www.gbif.org/occurrence/${data.identifier}`
+    a.href = `https://www.gbif.org/occurrence/${data.key}`
     a.innerText = 'Observation link (spoilers)'
     figcaption.appendChild(a)
     figure.appendChild(figcaption)
