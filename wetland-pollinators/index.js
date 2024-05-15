@@ -46,8 +46,8 @@ const data = {
         },
         '<i>Eumerus</i> (bollenzweefvliegen)': 1534472,
         '<i>Eupeodes</i> (kommazwevers)': {
-        '<i>Eupeodes corollae</i> (terrasjeskommazwever)': 1540742,
-        '<i>Eupeodes latifasciatus</i> (gele kommazwever)': 1540691,
+            '<i>Eupeodes corollae</i> (terrasjeskommazwever)': 1540742,
+            '<i>Eupeodes latifasciatus</i> (gele kommazwever)': 1540691,
             other: 1540675
         },
         '<i>Helophilus</i> (pendelzweefvliegen)': {
@@ -68,12 +68,12 @@ const data = {
         },
         '<i>Rhingia campestris</i> (gewone snuitvlieg)': 1537412,
         '<i>Scaeva</i> (halvemaanzwevers)': {
-        '<i>Scaeva pyrastri</i> (witte halvemaanzwever)': 1537719,
-        '<i>Scaeva selenitica</i> (gele halvemaanzwever)': 1537717
+            '<i>Scaeva pyrastri</i> (witte halvemaanzwever)': 1537719,
+            '<i>Scaeva selenitica</i> (gele halvemaanzwever)': 1537717
         },
         '<i>Sericomyia</i> (veenzweefvliegen)': {
-        '<i>Sericomyia lappona</i> (donkere veenzweefvlieg)': 1538831,
-        '<i>Sericomyia silentis</i> (hoogveenzweefvlieg)': 1538798
+            '<i>Sericomyia lappona</i> (donkere veenzweefvlieg)': 1538831,
+            '<i>Sericomyia silentis</i> (hoogveenzweefvlieg)': 1538798
         },
         '<i>Sphaerophoria</i> (langlijven)': 1539106,
         '<i>Syritta pipiens</i> (menuetzweefvlieg)': 1544431,
@@ -167,7 +167,7 @@ function getTaxon (form) {
 
 function isExcluded (taxon, exclude) {
     const parents = ['kingdomKey', 'phylumKey', 'classKey', 'orderKey', 'familyKey', 'genusKey', 'speciesKey']
-    return exclude.some(id => parents.some(parent => taxon[parent].toString() === id))
+    return exclude.some(id => parents.some(parent => taxon[parent] === id))
 }
 
 const selection = document.getElementById('selection')
@@ -179,7 +179,9 @@ const taxaGuess = document.getElementById('taxaGuess')
 const licenses = ['CC_BY_4_0', 'CC_BY_NC_4_0', 'CC0_1_0']
 
 function getTaxonIds (group) {
-    if (typeof group === 'object') {
+    if (Array.isArray(group)) {
+        return group.split(',').map(id => parseInt(id))
+    } else if (typeof group === 'object') {
         const ids = []
         for (const name in group) {
             ids.push(...getTaxonIds(group[name]))
