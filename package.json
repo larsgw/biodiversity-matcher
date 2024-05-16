@@ -1,0 +1,24 @@
+{
+  "name": "biodiversity-matcher",
+  "version": "0.0.0",
+  "description": "Quizzes to learn biodiversity by matching open-licensed photos to species or higher-level groups.",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larsgw/biodiversity-matcher.git"
+  },
+  "author": "Lars Willighagen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/larsgw/biodiversity-matcher/issues"
+  },
+  "homepage": "https://github.com/larsgw/biodiversity-matcher#readme",
+  "devDependencies": {
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

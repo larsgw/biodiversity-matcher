@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Biodiversity Matcher</title>
+        <meta name="description" content="Match Wikimedia pictures to taxonomic groups">
+        <link rel="stylesheet" href="index.css">
+        <script src="index.js"></script>
+    </head>
+    <body class="loading">
+        <header id="header">
+            <h1 class="quiz-title">Quiz</h1>
+            <button id="quiz-options" data-l10n="options">Options</button>
+        </header>
+
+        <div id="round">
+            <div id="round-info"></div>
+
+            <div id="round-gallery-container">
+                <div id="round-gallery">
+                </div>
+            </div>
+
+            <figure id="round-image">
+                <img>
+                <figcaption><a id="round-link" target="_blank"></a></figcaption>
+            </figure>
+
+            <div id="round-output"></div>
+
+            <div id="round-actions">
+                <button id="round-giveup" data-l10n="giveup">Give up</button>
+                <button id="round-next" data-l10n="next">Next</button>
+            </div>
+        </div>
+
+        <div id="answers">
+            <form id="answers-options">
+            </form>
+        </div>
+
+        <dialog id="dialog-quiz-options">
+            <h1 class="quiz-title">Quiz</h1>
+            <p class="quiz-description"></p>
+
+            <p>
+                <a href="https://github.com/larsgw/biodiversity-matcher" data-l10n="source_code">Source code</a>
+                  ·
+                <a href="https://github.com/larsgw/biodiversity-matcher/blob/master/LICENSE" data-l10n="license">License</a>
+                  ·
+                <a href="https://github.com/larsgw/biodiversity-matcher/issues" data-l10n="feedback">Feedback</a>
+            </p>
+
+            <button id="quiz-share" data-l10n="share">Share</button>
+            <button id="quiz-share-settings" data-l10n="share_settings">Share with current settings</button>
+
+            <h2 data-l10n="quiz_settings">Quiz settings</h2>
+            <div data-l10n="included_taxa">Included taxa</div>
+            <div id="options-answers">
+            </div>
+            <button id="options-answers-select" data-l10n="select_all">Select all</button>
+            <button id="options-answers-deselect" data-l10n="deselect_all">Deselect all</button>
+
+            <h2 data-l10n="general_settings">General settings</h2>
+            <div class="form-group">
+                <label for="options-language" data-l10n="language">Language</label>
+                <select id="options-language">
+                    <option value="en">English</option>
+                    <option value="nl">Nederlands</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="options-language-vernacular-names" data-l10n="species_name_language">Species name language</label>
+                <select id="options-language-vernacular-names">
+                    <option value="en">English</option>
+                    <option value="nl">Nederlands</option>
+                </select>
+            </div>
+
+            <hr>
+
+            <form method="dialog">
+                <button data-l10n="close">Close</button>
+            </form>
+        </dialog>
+    </body>
+</html>
