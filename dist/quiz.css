@@ -101,10 +101,12 @@ body > * {
 #round-output[data-success] {
   border: 2px solid;
   border-radius: 0.5em;
-  bottom: 0;
+  bottom: 1em;
   display: block;
+  left: 1em;
   padding: 0.5em;
   position: absolute;
+  right: 1em;
 }
 
 #round-output[data-success="true"] {
