@@ -21,6 +21,7 @@ export const nl = {
 
   guess_correct: 'Dat is juist! Dit is een {0}.',
   guess_close: 'Dit is inderdaad een {0}, maar een andere soort. Raad opnieuw.',
+  guess_imprecise: 'Dit is inderdaad een {0}, maar je kan een nauwkeuriger antwoord geven. Raad opnieuw.',
   guess_incorrect: 'Dit is niet een {0}. Raad opnieuw',
   guess_giveup: 'Dit is een {0}.',
   part_of: '{0}, deel van {1}',
@@ -51,6 +52,7 @@ export const en = {
 
   guess_correct: 'That is correct! This is a {0}.',
   guess_close: 'This is indeed {0}, but a different subtaxon. Guess again.',
+  guess_imprecise: 'This is indeed {0}, but a more specific subtaxon. Guess again.',
   guess_incorrect: 'This is not a {0}. Guess again.',
   guess_giveup: 'This is a {0}.',
   part_of: '{0}, part of {1}',
