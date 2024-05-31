@@ -28,6 +28,7 @@ body > * {
   align-items: center;
   border-bottom: 3px solid #000000;
   display: flex;
+  grid-area: header;
   justify-content: space-between;
   padding: 1em;
 }
@@ -46,12 +47,12 @@ body > * {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  padding-top: 1em;
+  grid-area: round;
+  padding: 1em;
 }
 
 #round-info {
   font-size: 0.75em;
-  margin: 0 1em;
 }
 
 #round-info:empty {
@@ -60,7 +61,6 @@ body > * {
 
 #round-gallery-container {
   overflow-x: auto;
-  margin: 0 1em;
 }
 
 #round-gallery {
@@ -78,7 +78,7 @@ body > * {
 
 #round-image {
   flex: auto 1 0;
-  margin: 0 1em;
+  margin: 0;
 }
 
 #round-image img {
@@ -103,7 +103,6 @@ body > * {
   border-radius: 0.5em;
   bottom: 0;
   display: block;
-  margin: 1em;
   padding: 0.5em;
   position: absolute;
 }
@@ -118,20 +117,20 @@ body > * {
   background-color: pink;
 }
 
-#round-actions {
+#answers {
+  display: flex;
+  flex-direction: column;
+  grid-area: answers;
+  overflow-y: hidden;
+}
+
+#answers-actions {
   align-items: center;
   background-color: #000000;
   color: #FFFFFF;
   display: flex;
   justify-content: space-between;
   padding: 1em;
-}
-
-#answers {
-  display: flex;
-  flex-direction: column;
-  grid-area: answers;
-  overflow-y: hidden;
 }
 
 #answers-options {
@@ -209,7 +208,7 @@ dialog h2 {
 
 @media (min-width: 800px) {
   body {
-    grid-template-areas: "header answers" "round answers";
+    grid-template-areas: "header round" "answers round";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
   }
@@ -220,7 +219,8 @@ dialog h2 {
   }
 
   #round-image img {
-    height: 50vh;
+    height: auto;
+    max-height: 70vh;
   }
 
   button,
