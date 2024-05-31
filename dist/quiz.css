@@ -239,7 +239,10 @@ dialog h2 {
   }
 
   #round-output[data-success] {
+    bottom: 0;
+    left: 0;
     position: relative;
+    right: 0;
   }
 
   #answers-options {
