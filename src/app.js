@@ -45,6 +45,13 @@ export class App {
                 $input.click()
             })
         })
+        document.body.addEventListener('keyup', (event) => {
+            if (event.key === 'n' || event.key === 'N' || event.code === 'KeyN' || event.keyCode === 78) {
+                this.loadQuestion()
+            } else if (event.key === 'g' || event.key === 'G' || event.code === 'KeyG' || event.keyCode === 71) {
+                this.displayResult(this.quiz.performGiveUp())
+            }
+        })
     }
 
     displayInterface () {
