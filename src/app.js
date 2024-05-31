@@ -20,10 +20,10 @@ export class App {
         document.getElementById('dialog-quiz-options').addEventListener('close', () => {
             this.displayAnswerOptions()
         })
-        document.getElementById('round-next').addEventListener('click', () => {
+        document.getElementById('answers-next').addEventListener('click', () => {
             this.loadQuestion()
         })
-        document.getElementById('round-giveup').addEventListener('click', () => {
+        document.getElementById('answers-giveup').addEventListener('click', () => {
             this.displayResult(this.quiz.performGiveUp())
         })
         document.getElementById('round-output').addEventListener('click', () => {
@@ -199,7 +199,7 @@ export class App {
     }
 
     async loadQuestion () {
-        const $nextButton = document.getElementById('round-next')
+        const $nextButton = document.getElementById('answers-next')
         $nextButton.disabled = true
 
         // Load question data
