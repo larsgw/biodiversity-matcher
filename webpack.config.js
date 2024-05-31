@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const entry = {
+    'flora': './data/flora.js',
     'invasive-mollusca': './data/invasive-mollusca.js',
     'pollinators': './data/pollinators.js',
     'wetland-pollinators': './data/wetland-pollinators.js'
