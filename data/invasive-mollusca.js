@@ -1,4 +1,6 @@
-export default {
+import { initialize } from '../src/index.js'
+
+initialize({
   metadata: {
     title: {
       en: 'Invasive Mollusca quiz'
@@ -60,4 +62,4 @@ export default {
       ]
     }
   ]
-}
+})

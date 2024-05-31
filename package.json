@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/larsgw/biodiversity-matcher#readme",
   "devDependencies": {
+    "html-webpack-plugin": "^5.6.0",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4"
   }

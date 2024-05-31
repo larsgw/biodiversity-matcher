@@ -1,10 +1,7 @@
 import { App } from './app.js'
 import { Quiz } from './quiz.js'
-import quizzes from '../data/index.js'
 
-async function main () {
-    const params = new URLSearchParams(window.location.search)
-
+export function initialize (config) {
     setTimeout(function () {
         if (document.body.classList.contains('loading')) {
             console.warn('Loading took over 50 ms')
@@ -12,24 +9,21 @@ async function main () {
         }
     }, 100)
 
-    if (params.has('quiz')) {
-        const id = params.get('quiz')
-        const quiz = new Quiz(id, quizzes[id], {
-            language: params.get('l') || 'en',
-            vernacularNameLanguage: params.get('nl') || 'en'
-            // TODO season/life stage
-        })
+    const params = new URLSearchParams(window.location.search)
+    const quiz = new Quiz(config, {
+        language: params.get('l') || 'en',
+        vernacularNameLanguage: params.get('nl') || 'en'
+    })
 
-        if (params.has('taxon')) {
-            const taxa = params.get('taxon').split('|')
-            for (const id in quiz.taxonomy.taxaById) {
-                quiz.taxonomy.setActive(id, taxa.includes(id))
-            }
+    if (params.has('taxon')) {
+        const taxa = params.get('taxon').split('|')
+        for (const id in quiz.taxonomy.taxaById) {
+            quiz.taxonomy.setActive(id, taxa.includes(id))
         }
-
-        const app = new App(quiz)
-        app.loadQuestion()
     }
-}
 
-window.addEventListener('load', main)
+    // TODO season/life stage
+
+    const app = new App(quiz)
+    app.loadQuestion()
+}
