@@ -1,5 +1,6 @@
 import { App } from './app.js'
 import { Quiz } from './quiz.js'
+import quizzes from '../data/index.js'
 
 async function main () {
     const params = new URLSearchParams(window.location.search)
@@ -13,9 +14,7 @@ async function main () {
 
     if (params.has('quiz')) {
         const id = params.get('quiz')
-        const config = await fetch(`../static/quizzes/${id}.json`).then(response => response.json())
-
-        const quiz = new Quiz(id, config, {
+        const quiz = new Quiz(id, quizzes[id], {
             language: params.get('l') || 'en',
             vernacularNameLanguage: params.get('nl') || 'en'
             // TODO season/life stage
@@ -33,4 +32,4 @@ async function main () {
     }
 }
 
-main()
+window.addEventListener('load', main)
