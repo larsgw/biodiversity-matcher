@@ -7,8 +7,7 @@ import { formatMessage, formatUrl, randomSample } from './util.js'
 export class Quiz {
     round = null
 
-    constructor (id, config, settings) {
-        this.id = id
+    constructor (config, settings) {
         this.config = config
         this.settings = settings
         this.provider = getProvider(config.provider.type)
@@ -100,7 +99,7 @@ export class Quiz {
     }
 
     getUrl (withSettings) {
-        const options = { quiz: this.id }
+        const options = {}
 
         if (withSettings) {
             options.l = this.settings.language
