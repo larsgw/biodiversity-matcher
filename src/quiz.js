@@ -22,7 +22,8 @@ export class Quiz {
         // TODO season/life stage
         const options = {
             ...this.config.provider.defaultOptions,
-            taxon: category
+            taxon: category,
+            vernacularNameLanguage: this.settings.vernacularNameLanguage
         }
 
         try {
