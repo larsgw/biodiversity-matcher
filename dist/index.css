@@ -2,12 +2,15 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   display: grid;
   font-family: sans-serif;
   grid-template-areas: "header" "round" "answers";
   grid-template-rows: auto auto 1fr;
-  height: 100vh;
   margin: 0;
   max-width: none;
   overflow: hidden;
