@@ -20,7 +20,7 @@ export class GbifProvider extends Provider {
                 country: options.country,
                 license: options.licenses,
                 occurrenceStatus: 'PRESENT',
-                limit: 20,
+                limit: 50,
                 offset: this.cache[category].offset
             })).then(response => response.json())
 
