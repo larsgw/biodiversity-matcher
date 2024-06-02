@@ -22,7 +22,13 @@ export function initialize (config) {
         }
     }
 
-    // TODO season/life stage
+    if (quiz.config.settings) {
+        for (const setting in quiz.config.settings) {
+            if (params.has(setting)) {
+                quiz.settings[setting] = params.get(setting)
+            }
+        }
+    }
 
     const app = new App(quiz)
     app.loadQuestion()

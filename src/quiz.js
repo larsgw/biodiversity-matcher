@@ -18,11 +18,10 @@ export class Quiz {
         this.round = null
 
         const category = randomSample(this.taxonomy.getActiveTaxa())
-        // TODO season/life stage
         const options = {
             ...this.config.provider.defaultOptions,
-            taxon: category,
-            vernacularNameLanguage: this.settings.vernacularNameLanguage
+            ...this.getSettings(category),
+            taxon: category
         }
 
         try {
@@ -38,6 +37,23 @@ export class Quiz {
         }
 
         return this.round
+    }
+
+    getSettings (taxon) {
+        const settings = {}
+
+        if (this.config.settings) {
+            for (const setting in this.config.settings) {
+                const config = this.config.settings[setting]
+                const enabled = taxon.isSettingEnabled(setting) ?? config.defaultEnabled ?? true
+
+                if (enabled) {
+                    settings[config.id] = this.settings[setting]
+                }
+            }
+        }
+
+        return settings
     }
 
     performGuess (guess) {
@@ -84,12 +100,16 @@ export class Quiz {
         return taxon.getLabel(this.settings.vernacularNameLanguage)
     }
 
-    getMetadata () {
+    getLabel (labels) {
         const language = this.settings.language
         const backup = this.config.metadata.languages[0]
+        return labels[language] || language[backup]
+    }
+
+    getMetadata () {
         return {
-            title: this.config.metadata.title[language] || this.config.metadata.title[backup],
-            description: this.config.metadata.description[language] || this.config.metadata.description[backup]
+            title: this.getLabel(this.config.metadata.title),
+            description: this.getLabel(this.config.metadata.description)
         }
     }
 
@@ -111,7 +131,13 @@ export class Quiz {
                 options.taxon = activeTaxa.map(taxon => taxon.id).join('|')
             }
 
-            // TODO season/life stage
+            if (this.config.settings) {
+                for (const setting in this.config.settings) {
+                    if (setting in this.settings) {
+                        options[setting] = this.settings[setting]
+                    }
+                }
+            }
         }
 
         return formatUrl(window.location, options)
