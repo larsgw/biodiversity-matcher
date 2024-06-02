@@ -2,6 +2,12 @@ import * as locales from './locales.js'
 import { NoQuestionsError } from './providers/provider.js'
 import { Quiz } from './quiz.js'
 
+function clear ($element) {
+    while ($element.firstChild) {
+        $element.removeChild($element.firstChild)
+    }
+}
+
 export class App {
     constructor (quiz) {
         this.quiz = quiz
@@ -77,7 +83,14 @@ export class App {
     displaySettings () {
         this.displayAnswerSettings()
 
-        // TODO season/life stage
+        if (this.quiz.config.settings) {
+            const $container = document.getElementById('options-quiz')
+            clear($container)
+            for (const setting in this.quiz.config.settings) {
+                const config = this.quiz.config.settings[setting]
+                this.displayQuizSetting(setting, config, $container)
+            }
+        }
 
         const optionLanguage = document.getElementById('options-language')
         optionLanguage.value = this.quiz.settings.language
@@ -98,10 +111,7 @@ export class App {
         if (!taxa) {
             taxa = this.quiz.taxonomy.taxaByTree
             $container = document.getElementById('options-answers')
-
-            while ($container.firstChild) {
-                $container.removeChild($container.firstChild)
-            }
+            clear($container)
         }
 
         for (const taxon of taxa) {
@@ -143,14 +153,40 @@ export class App {
         }
     }
 
+    displayQuizSetting (setting, config, $container) {
+        const id = `options-quiz-${setting}`
+
+        const $div = document.createElement('div')
+        $div.classList.add('form-group')
+
+        const $label = document.createElement('label')
+        $label.setAttribute('for', id)
+        $label.textContent = this.quiz.getLabel(config.label)
+
+        const $select = document.createElement('select')
+        $select.setAttribute('id', id)
+        for (const option of config.options) {
+            const $option = document.createElement('option')
+            $option.setAttribute('value', option.id)
+            $option.textContent = this.quiz.getLabel(option.label)
+            $select.append($option)
+        }
+        $select.value = this.quiz.settings[setting] ?? config.value
+
+        $select.addEventListener('change', () => {
+            this.quiz.settings[setting] = $select.value
+        })
+
+        $div.append($label)
+        $div.append($select)
+        $container.append($div)
+    }
+
     displayAnswerOptions (taxa, $container) {
         if (!taxa) {
             taxa = this.quiz.taxonomy.taxaByTree
             $container = document.getElementById('answers-options')
-
-            while ($container.firstChild) {
-                $container.removeChild($container.firstChild)
-            }
+            clear($container)
         }
 
         for (const taxon of taxa) {
@@ -227,9 +263,7 @@ export class App {
         this.displayImage(question.images[0])
 
         const $gallery = document.getElementById('round-gallery')
-        while ($gallery.firstChild) {
-            $gallery.removeChild($gallery.firstChild)
-        }
+        clear($gallery)
 
         for (const image of question.images) {
             const $thumbnail = document.createElement('img')
@@ -263,9 +297,7 @@ export class App {
     hideResult () {
         const $result = document.getElementById('round-output')
         delete $result.dataset.success
-        while ($result.firstChild) {
-            $result.removeChild($result.firstChild)
-        }
+        clear($result)
     }
 
     shareUrl (url) {

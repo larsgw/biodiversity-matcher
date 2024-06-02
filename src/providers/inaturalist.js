@@ -16,13 +16,24 @@ export class iNaturalistProvider extends Provider {
             photo_license: options.licenses.join(','),
             quality_grade: 'research',
             locale: options.vernacularNameLanguage,
-            per_page: 50,
+            per_page: 10,
             page: this.cache[category].page
         }
 
         const excludedTaxa = options.taxon.getChildTaxa()
         if (excludedTaxa.length) {
             urlOptions.without_taxon_id = excludedTaxa.join(',')
+        }
+
+        if (options.lifestage === 'nymph') {
+            urlOptions.term_id = 1
+            urlOptions.term_value_id = '5'
+        } else if (options.lifestage === 'larva') {
+            urlOptions.term_id = 1
+            urlOptions.term_value_id = 6
+        } else if (options.lifestage === 'adult') {
+            urlOptions.term_id = 1
+            urlOptions.term_value_id = 1
         }
 
         // Fetch data

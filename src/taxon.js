@@ -16,6 +16,9 @@ export class Taxon {
     this.taxa = taxon.taxa ? [].concat(taxon.taxa) : []
     this.children = taxon.children || []
     this.path = taxon.path || []
+
+    // Non-taxomic info
+    this.settingsEnabled = taxon.settingsEnabled || {}
     this.active = taxon.active
   }
 
@@ -46,5 +49,15 @@ export class Taxon {
 
   hasActiveChildTaxa () {
     return this.children.length && this.children.some(child => child.active || child.hasActiveChildTaxa())
+  }
+
+  isSettingEnabled (setting) {
+    for (let i = this.path.length - 1; i >= 0; i--) {
+      if (setting in this.path[i].settingsEnabled) {
+        return this.path[i].settingsEnabled[setting]
+      }
+    }
+
+    return null
   }
 }
