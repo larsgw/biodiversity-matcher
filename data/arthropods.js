@@ -93,8 +93,7 @@ initialize({
           children: [
             { scientificName: 'Isopoda', taxonRank: 'order', taxa: 'Q206338' },
             { scientificName: 'Amphipoda', taxonRank: 'order', taxa: 'Q193418' },
-            // Q13411080 = Mysida (Mysidacea = Q1208947)
-            { scientificName: 'Mysidacea', taxonRank: 'order', taxa: 'Q13411080' },
+            { scientificName: 'Mysidacea', taxonRank: 'order', taxa: ['Q13411080', 'Q900771'] },
             {
               scientificName: 'Decapoda',
               taxonRank: 'subclass',
@@ -188,7 +187,7 @@ initialize({
                           scientificName: 'Dictyoptera',
                           taxonRank: 'superorder',
                           children: [
-                            // Q139689 = Blattidae (Blattaria = Q25309)
+                            // Q139689 = Blattodea (Blattaria = Q25309)
                             { scientificName: 'Blattaria', taxonRank: 'order', taxa: 'Q139689' },
                             { scientificName: 'Isoptera', taxonRank: 'order', taxa: 'Q546583' },
                             { scientificName: 'Mantodea', taxonRank: 'order', taxa: 'Q131250' }
@@ -237,9 +236,14 @@ initialize({
                       taxonRank: 'order',
                       children: [
                         { scientificName: 'Symphyta', taxonRank: 'suborder', taxa: 'Q615290' },
-                        // Q957016 = Ichneumonoidea (Parasitica = Q43303344)
-                        // { scientificName: 'Parasitica', taxonRank: 'suborder', taxa: 'Q957016' },
-                        { scientificName: 'Aculeata', taxonRank: 'suborder', taxa: 'Q1251421' }
+                        {
+                          scientificName: 'Apocrita (Parasitica)',
+                          taxonRank: 'suborder',
+                          taxa: 'Q22864',
+                          children: [
+                            { scientificName: 'Aculeata', taxonRank: 'suborder', taxa: 'Q1251421' }
+                          ]
+                        }
                       ]
                     },
                     { scientificName: 'Strepsiptera', taxonRank: 'order', taxa: 'Q327144' },
@@ -251,10 +255,10 @@ initialize({
                       children: [
                         { scientificName: 'Nematocera', taxonRank: 'suborder', taxa: 'Q27605' },
                         {
-                          scientificName: 'Brachycera',
+                          scientificName: 'Brachycera (Orthorrhapha)',
                           taxonRank: 'suborder',
+                          taxa: 'Q27584',
                           children: [
-                            // { scientificName: 'Orthorrhapha', taxonRank: 'infraorder', taxa: '' },
                             { scientificName: 'Cyclorrhapha', taxonRank: 'infraorder', taxa: 'Q14857444' }
                           ]
                         }
