@@ -1,12 +1,17 @@
-# Wikimedia Biodiversity matcher
+# Biodiversity Matcher
 
-Do your best to match open-licensed pictures to taxonomic groups!
+Create quizzes to match pictures to taxonomic groups, using photos from GBIF, iNaturalist, or Wikimedia.
 
-  - Arthropoda, Wikimedia: https://larsgw.github.io/biodiversity-matcher/
-  - Flora, Wikimedia: https://larsgw.github.io/biodiversity-matcher/flora/
-  - Arthropoda, iNaturalist: https://larsgw.github.io/biodiversity-matcher/inat/
+## Structure
 
----
+  - `src/index.js`, `src/app.js`: UI
+  - `src/quiz.js`: quiz logic
+  - `src/providers/`: API interactions & caching
+  - `src/locales.js`: translations
+  - `src/quiz.html`: quiz page template
+  - `data/`: quizzes
 
-<img src="screen_1.png" width=200 />
-<img src="screen_2.png" width=200 />
+## Screenshots
+
+<img src="screen_1.png" width="200" />
+<img src="screen_2.png" width="600" />
