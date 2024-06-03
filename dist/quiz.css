@@ -65,10 +65,11 @@ body > * {
 #round.loading:after {
   bottom: 50%;
   content: "Loading...";
+  left: 0;
   margin: 0 auto;
   position: absolute;
+  right: 0;
   text-align: center;
-  width: 100%;
 }
 
 #round-info {
