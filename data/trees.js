@@ -295,112 +295,134 @@ initialize({
       vernacularName: { en: 'Fungi', nl: 'Schimmel' },
       children: [
         {
-          vernacularName: { en: '', nl: 'Zadelzwam' },
+          scientificName: 'Polyporus squamosus',
+          vernacularName: { nl: 'Zadelzwam' },
           taxonRank: 'species',
           taxa: 940028
         },
         {
-          vernacularName: { en: '', nl: 'Gewone oesterzwam' },
+          scientificName: 'Pleurotus ostreatus',
+          vernacularName: { nl: 'Gewone oesterzwam' },
           taxonRank: 'species',
           taxa: 48494
         },
         {
-          vernacularName: { en: '', nl: 'Reuzenzwam' },
+          scientificName: 'Meripilus giganteus',
+          vernacularName: { nl: 'Reuzenzwam' },
           taxonRank: 'species',
           taxa: 157989
         },
         {
-          vernacularName: { en: '', nl: 'Eikhaas' },
+          scientificName: 'Grifola frondosa',
+          vernacularName: { nl: 'Eikhaas' },
           taxonRank: 'species',
           taxa: 53714
         },
         {
-          vernacularName: { en: '', nl: 'Echte honingzwam' },
+          scientificName: 'Armillaria mellea',
+          vernacularName: { nl: 'Echte honingzwam' },
           taxonRank: 'species',
           taxa: 55950
         },
         {
-          vernacularName: { en: '', nl: 'Goudvliesbundelzwam' },
+          scientificName: 'Pholiota aurivella',
+          vernacularName: { nl: 'Goudvliesbundelzwam' },
           taxonRank: 'species',
           taxa: 351817
         },
         {
-          vernacularName: { en: '', nl: 'Paarse korstzwam' },
+          scientificName: 'Chondrostereum purpureum',
+          vernacularName: { nl: 'Paarse korstzwam' },
           taxonRank: 'species',
           taxa: 118036
         },
         {
-          vernacularName: { en: '', nl: 'Echte vuurzwam' },
+          scientificName: 'Phellinus igniarius',
+          vernacularName: { nl: 'Echte vuurzwam' },
           taxonRank: 'species',
           taxa: 125136
         },
         {
-          vernacularName: { en: '', nl: 'schubbige bundelzwam' },
+          scientificName: 'Pholiota squarrosa',
+          vernacularName: { nl: 'schubbige bundelzwam' },
           taxonRank: 'species',
           taxa: 153445
         },
         {
-          vernacularName: { en: '', nl: 'Gewone elfenbankje' },
+          scientificName: 'Trametes versicolor',
+          vernacularName: { nl: 'Gewone elfenbankje' },
           taxonRank: 'species',
           taxa: 54134
         },
         {
-          vernacularName: { en: '', nl: 'Porseleinzwam' },
+          scientificName: 'Oudemansiella mucida',
+          vernacularName: { nl: 'Porseleinzwam' },
           taxonRank: 'species',
           taxa: 55964
         },
         {
-          vernacularName: { en: '', nl: 'Echte tonderzwam' },
+          scientificName: 'Fomes fomentarius',
+          vernacularName: { nl: 'Echte tonderzwam' },
           taxonRank: 'species',
           taxa: 127510
         },
         {
-          vernacularName: { en: '', nl: 'Gesteelde lakzwam' },
+          scientificName: 'Ganoderma lucidum',
+          vernacularName: { nl: 'Gesteelde lakzwam' },
           taxonRank: 'species',
           taxa: 125932
         },
         {
-          vernacularName: { en: '', nl: 'Fluweelpootje' },
+          scientificName: 'Flammulina velutipes',
+          vernacularName: { nl: 'Fluweelpootje' },
           taxonRank: 'species',
           taxa: 67594
         },
         {
-          vernacularName: { en: '', nl: 'Berkendoder' },
+          scientificName: 'Fomitopsis betulina',
+          vernacularName: { nl: 'Berkendoder' },
           taxonRank: 'species',
           taxa: 775410
         },
         {
-          vernacularName: { en: '', nl: 'Dennenvoetzwam' },
+          scientificName: 'Phaeolus schweinitzii',
+          vernacularName: { nl: 'Dennenvoetzwam' },
           taxonRank: 'species',
           taxa: 118084
         },
         {
-          vernacularName: { en: '', nl: 'Biefstukzwam' },
+          scientificName: 'Fistulina hepatica',
+          vernacularName: { nl: 'Biefstukzwam' },
           taxonRank: 'species',
           taxa: 123897
         },
         {
-          vernacularName: { en: '', nl: 'Zwavelzwam' },
+          scientificName: 'Laetiporus sulphureus',
+          vernacularName: { nl: 'Zwavelzwam' },
           taxonRank: 'species',
           taxa: 53713
         },
         {
-          vernacularName: { en: '', nl: 'Ruige weerschijnzwam' },
+          scientificName: 'Inonotus hispidus',
+          vernacularName: { nl: 'Ruige weerschijnzwam' },
           taxonRank: 'species',
           taxa: 194483
         },
         {
-          vernacularName: { en: '', nl: 'Dikrandtonderzwam' },
+          scientificName: 'Ganoderma australe',
+          vernacularName: { nl: 'Dikrandtonderzwam' },
           taxonRank: 'species',
           taxa: 63509
         },
         {
-          vernacularName: { en: '', nl: 'Harslakzwam' },
+          scientificName: 'Ganoderma resinaceum',
+          vernacularName: { nl: 'Harslakzwam' },
           taxonRank: 'species',
           taxa: 328280
         },
         {
-          vernacularName: { en: '', nl: 'Korsthoutskoolzwam' },
+          scientificName: 'Hypoxylon deustum',
+          vernacularName: { nl: 'Korsthoutskoolzwam' },
           taxonRank: 'species',
           taxa: 128051
         }
