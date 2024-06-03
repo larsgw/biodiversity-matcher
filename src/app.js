@@ -25,7 +25,7 @@ export class App {
         })
         document.getElementById('dialog-quiz-options').addEventListener('close', () => {
             this.displayAnswerOptions()
-            if (history) {
+            if (history && location.href !== this.quiz.getUrl(true).href) {
                 history.pushState({}, '', this.quiz.getUrl(true))
             }
         })
