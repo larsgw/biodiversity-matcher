@@ -242,7 +242,10 @@ export class App {
     }
 
     async loadQuestion () {
+        const $round = document.getElementById('round')
         const $nextButton = document.getElementById('answers-next')
+
+        $round.classList.add('loading')
         $nextButton.disabled = true
 
         // Load question data
@@ -253,6 +256,7 @@ export class App {
             this.displayResult({ success: false, message: error.message })
         }
 
+        $round.classList.remove('loading')
         $nextButton.disabled = false
     }
 

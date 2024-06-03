@@ -16,7 +16,7 @@ body {
   overflow: hidden;
 }
 
-.loading {
+body.loading {
   visibility: hidden;
 }
 
@@ -49,6 +49,26 @@ body > * {
   gap: 1em;
   grid-area: round;
   padding: 1em;
+  position: relative;
+}
+
+#round.loading:before {
+  background-color: rgba(255, 255, 255, 0.5);
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#round.loading:after {
+  bottom: 50%;
+  content: "Loading...";
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  width: 100%;
 }
 
 #round-info {
@@ -105,7 +125,7 @@ body > * {
   display: block;
   left: 1em;
   padding: 0.5em;
-  position: absolute;
+  position: fixed;
   right: 1em;
 }
 
