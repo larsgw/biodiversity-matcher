@@ -25,6 +25,9 @@ export class App {
         })
         document.getElementById('dialog-quiz-options').addEventListener('close', () => {
             this.displayAnswerOptions()
+            if (history) {
+                history.pushState({}, '', this.quiz.getUrl(true))
+            }
         })
         document.getElementById('answers-next').addEventListener('click', () => {
             this.loadQuestion()
