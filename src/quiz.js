@@ -68,7 +68,7 @@ export class Quiz {
         }
 
         const commonParent = this.taxonomy.getCommonParent(guess, category.id)
-        if (commonParent.id === guess) {
+        if (commonParent && commonParent.id === guess) {
             return { success: 'partial', message: this.getMessage('guess_imprecise', this.getTaxonLabel(commonParent)) }
         } else if (commonParent) {
             return { success: false, message: this.getMessage('guess_close', this.getTaxonLabel(commonParent)) }
