@@ -36,6 +36,14 @@ export class iNaturalistProvider extends Provider {
             urlOptions.term_value_id = 1
         }
 
+        if (options.month) {
+            urlOptions.month = options.month.join(',')
+        } else if (options.season === 'summer') {
+            urlOptions.month = '4,5,6,7,8,9'
+        } else if (options.season === 'winter') {
+            urlOptions.month = '10,11,12,1,2,3'
+        }
+
         // Fetch data
         const data = await fetch(formatUrl('https://api.inaturalist.org/v1/observations', urlOptions))
             .then(response => response.json())
