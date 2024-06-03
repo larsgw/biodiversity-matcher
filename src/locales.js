@@ -1,6 +1,7 @@
 export const nl = {
   options: 'Opties',
   giveup: 'Geef op',
+  guess: 'Raad',
   next: 'Volgende',
 
   source_code: 'Broncode',
@@ -32,6 +33,7 @@ export const nl = {
 export const en = {
   options: 'Options',
   giveup: 'Give up',
+  guess: 'Guess',
   next: 'Next',
 
   source_code: 'Source code',

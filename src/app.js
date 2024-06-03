@@ -29,6 +29,9 @@ export class App {
         document.getElementById('answers-next').addEventListener('click', () => {
             this.loadQuestion()
         })
+        document.getElementById('answers-guess').addEventListener('click', () => {
+            this.guess()
+        })
         document.getElementById('answers-giveup').addEventListener('click', () => {
             this.displayResult(this.quiz.performGiveUp())
         })
@@ -221,8 +224,7 @@ export class App {
                 })
                 $input.addEventListener('click', () => {
                     if ($input.parentElement.classList.contains('selected')) {
-                        const guess = document.getElementById('answers-options').answer.value
-                        this.displayResult(this.quiz.performGuess(guess))
+                        this.guess()
                     }
                 })
             } else {
@@ -308,5 +310,10 @@ export class App {
         navigator.clipboard.writeText(url)
             .then(() => { this.displayResult({ success: true, message: this.quiz.getMessage('copy_success') }) })
             .catch(() => { this.displayResult({ success: false, message: this.quiz.getMessage('copy_fail') }) })
+    }
+
+    guess () {
+        const guess = document.getElementById('answers-options').answer.value
+        this.displayResult(this.quiz.performGuess(guess))
     }
 }
