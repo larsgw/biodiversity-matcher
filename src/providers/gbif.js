@@ -13,8 +13,7 @@ export class GbifProvider extends Provider {
         let counter = 0
 
         while (!success && !done) {
-            // Fetch data
-            const data = await fetch(formatUrl('https://api.gbif.org/v1/occurrence/search', {
+            const urlOptions = {
                 mediaType: 'StillImage',
                 taxonKey: options.taxon.taxa,
                 country: options.country,
@@ -22,7 +21,17 @@ export class GbifProvider extends Provider {
                 occurrenceStatus: 'PRESENT',
                 limit: 50,
                 offset: this.cache[category].offset
-            })).then(response => response.json())
+            }
+
+            if (options.lifestage === 'adult') {
+                urlOptions.lifeStage = 'Adult'
+            } else if (options.lifestage === 'nymph') {
+                urlOptions.lifeStage = 'Nymph'
+            }
+
+            // Fetch data
+            const data = await fetch(formatUrl('https://api.gbif.org/v1/occurrence/search', urlOptions))
+                .then(response => response.json())
 
             // Filter and process data
             let results = data.results ?? []
