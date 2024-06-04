@@ -7,7 +7,7 @@ const LANGUAGE_MAP = {
   eng: 'en'
 }
 
-function fetchJson (url) {
+async function fetchJson (url) {
   return fetch(url).then(response => response.json())
 }
 
@@ -37,7 +37,7 @@ async function fetchTaxa (taxonKey, place, languages) {
     const response = await fetchJson(url).then(response => response.facets[0].counts)
 
     for (const { name } of response) {
-      addTaxon(name, results)
+      await addTaxon(name, results)
     }
 
     if (response.length < pageSize) {
