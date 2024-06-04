@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const entry = {
     'arthropods': './data/arthropods.js',
     'dutch-orchids': './data/dutch-orchids.js',
+    'dutch-pentatomoidea': './data/dutch-pentatomoidea.js',
     'flora': './data/flora.js',
     'inat': './data/inat.js',
     'invasive-mollusca': './data/invasive-mollusca.js',
@@ -24,7 +25,7 @@ for (const id in entry) {
 }
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry,
     output: {
         path: path.resolve(__dirname, 'dist'),
