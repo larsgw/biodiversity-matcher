@@ -49,12 +49,16 @@ export class App {
         })
         document.getElementById('options-answers-select').addEventListener('click', () => {
             document.querySelectorAll('#options-answers input').forEach(($input) => {
-                $input.click()
+                if (!$input.checked) {
+                    $input.click()
+                }
             })
         })
         document.getElementById('options-answers-deselect').addEventListener('click', () => {
             document.querySelectorAll('#options-answers input').forEach(($input) => {
-                $input.click()
+                if ($input.checked) {
+                    $input.click()
+                }
             })
         })
         document.body.addEventListener('keyup', (event) => {
