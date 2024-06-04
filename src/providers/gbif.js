@@ -37,17 +37,27 @@ export class GbifProvider extends Provider {
             let results = data.results ?? []
             this.cache[category].offset += results.length
 
-            results = results.filter(result => ['SPECIES', 'SUBSPECIES', 'VARIETY'].includes(result.taxonRank))
-
             const excludedTaxa = options.taxon.getChildTaxa()
-            if (excludedTaxa.length) {
-                results = results.filter(result => !this._isResultExcluded(result, excludedTaxa))
+            for (const result of results) {
+                if (!['SPECIES', 'SUBSPECIES', 'VARIETY'].includes(result.taxonRank)) {
+                    continue
+                }
+
+                if (excludedTaxa.length && this._isResultExcluded(result, excludedTaxa)) {
+                    continue
+                }
+
+                const parsedResult = this._parseResult(result)
+
+                if (parsedResult.images.length === 0) {
+                    continue
+                }
+
+                this.cache[category].questions.push(parsedResult)
+                success = true
             }
 
-            this.cache[category].questions.push(...results.map(result => this._parseResult(result)))
-
             counter++
-            success = results.length > 0
             done = data.endOfRecords || counter > 10
         }
 
@@ -76,11 +86,15 @@ export class GbifProvider extends Provider {
         return {
             taxon: new Taxon(taxon),
             url: `https://www.gbif.org/occurrence/${result.key}`,
-            images: result.media.filter(media => media.type === 'StillImage').map(media => this._parseMedia(media))
+            images: result.media.map(media => this._parseMedia(media)).filter(media => media !== null)
         }
     }
 
     _parseMedia (media) {
+        if (media.type !== 'StillImage' || !media.identifier) {
+            return null
+        }
+
         const image = {
             src: media.identifier,
             thumbnail: media.identifier,
