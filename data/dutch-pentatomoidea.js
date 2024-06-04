@@ -44,6 +44,7 @@ initialize({
         {
           scientificName: 'Elasmostethus',
           taxonRank: 'genus',
+          taxa: 2079269,
           vernacularName: { nl: 'berkenkielwants/kleine kielwants' }
         },
         {
@@ -122,20 +123,8 @@ initialize({
         {
           scientificName: 'Ochetostethus',
           taxonRank: 'genus',
-          children: [
-            {
-              scientificName: 'Ochetostethus nanus',
-              taxonRank: 'species',
-              taxa: 4486192,
-              vernacularName: { nl: 'dwerggraafwants' }
-            },
-            {
-              scientificName: 'Ochetostethus opacus',
-              taxonRank: 'species',
-              taxa: 4486187,
-              vernacularName: { nl: 'obscure graafwants' }
-            }
-          ]
+          taxa: 4404611,
+          vernacularName: { nl: 'dwerggraafwants/obscure graafwants' }
         },
         {
           scientificName: 'Sehirus',
