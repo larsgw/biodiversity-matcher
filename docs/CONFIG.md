@@ -60,7 +60,7 @@ An object with a setting names as keys, and [setting](#setting) configuration as
 | `scientificName`  | `string` | | |
 | `vernacularName` | [Localized text](#localized-text) | | |
 | `taxonRank`  | `string` | | Lowercase rank, used to format scientific names. |
-| `taxa` | `string|number|Array<string|number>` | | Identifier(s) used to fetch questions. |
+| `taxa` | `string\|number\|Array<string\|number>` | | Identifier(s) used to fetch questions. |
 | `children` | `Array<Taxon>` | | Child taxa. |
 | `settingsEnabled` | `Object<string,boolean>` | | Enable or disable a [setting](#setting) for this taxon and its subtaxa. |
 
