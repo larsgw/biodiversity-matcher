@@ -8,6 +8,7 @@ const entry = {
     'flora': './data/flora.js',
     'inat': './data/inat.js',
     'invasive-mollusca': './data/invasive-mollusca.js',
+    'poland-vegetation': './data/poland-vegetation.js',
     'pollinators': './data/pollinators.js',
     'trees': './data/trees.js',
     'wetland-pollinators': './data/wetland-pollinators.js'
