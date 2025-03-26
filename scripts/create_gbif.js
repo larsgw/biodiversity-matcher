@@ -1,4 +1,3 @@
-const fetch = require('node-fetch')
 const util = require('util')
 
 const API_BASE = 'https://api.gbif.org/v1/'
