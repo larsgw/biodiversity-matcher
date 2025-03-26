@@ -22,13 +22,13 @@ initialize({
           scientificName: 'Anacamptis morio',
           taxonRank: 'species',
           taxa: 2808565,
-          vernacularName: { en: 'Green-Winged Orchid', nl: 'harlekijn' }
+          vernacularName: { en: 'green-winged orchid', nl: 'harlekijn' }
         },
         {
           scientificName: 'Anacamptis pyramidalis',
           taxonRank: 'species',
           taxa: 2808330,
-          vernacularName: { en: 'Pyramidal Orchid', nl: 'hondskruid' }
+          vernacularName: { en: 'pyramidal orchid', nl: 'hondskruid' }
         }
       ]
     },
@@ -40,22 +40,22 @@ initialize({
           scientificName: 'Cephalanthera damasonium',
           taxonRank: 'species',
           taxa: 2795952,
-          vernacularName: { en: 'White Helleborine', nl: 'bleek bosvogeltje' }
+          vernacularName: { en: 'white helleborine', nl: 'bleek bosvogeltje' }
         },
         {
           scientificName: 'Cephalanthera longifolia',
           taxonRank: 'species',
           taxa: 2795869,
-          vernacularName: { en: 'Narrow-Leaved Helleborine', nl: 'wit bosvogeltje' }
+          vernacularName: { en: 'narrow-leaved helleborine', nl: 'wit bosvogeltje' }
         },
         {
           scientificName: 'Cephalanthera rubra',
           taxonRank: 'species',
           taxa: 2795845,
-          vernacularName: { en: 'Red Helleborine', nl: 'rood bosvogeltje' }
+          vernacularName: { en: 'red helleborine', nl: 'rood bosvogeltje' }
         }
       ],
-      vernacularName: { en: 'Helleborines', nl: 'bosvogeltjes' }
+      vernacularName: { en: 'helleborines', nl: 'bosvogeltjes' }
     },
     {
       scientificName: 'Corallorhiza',
@@ -65,10 +65,10 @@ initialize({
           scientificName: 'Corallorhiza trifida',
           taxonRank: 'species',
           taxa: 2797313,
-          vernacularName: { en: 'Pale Coralroot', nl: 'koraalwortel' }
+          vernacularName: { en: 'pale coralroot', nl: 'koraalwortel' }
         }
       ],
-      vernacularName: { en: 'Coralroots' }
+      vernacularName: { en: 'coralroots' }
     },
     {
       scientificName: 'Dactylorhiza',
@@ -83,7 +83,7 @@ initialize({
           scientificName: 'Dactylorhiza elata',
           taxonRank: 'species',
           taxa: 7861697,
-          vernacularName: { en: 'Stately Dactylorhiza', nl: 'grote rietorchis' }
+          vernacularName: { en: 'stately dactylorhiza', nl: 'grote rietorchis' }
         },
         {
           scientificName: 'Dactylorhiza ×grandis',
@@ -152,10 +152,10 @@ initialize({
           scientificName: 'Dactylorhiza viridis',
           taxonRank: 'species',
           taxa: 2810284,
-          vernacularName: { en: 'Frog Orchid', nl: 'groene nachtorchis' }
+          vernacularName: { en: 'frog orchid', nl: 'groene nachtorchis' }
         }
       ],
-      vernacularName: { en: 'Marsh-Orchids' }
+      vernacularName: { en: 'marsh-orchids' }
     },
     {
       scientificName: 'Epipactis',
@@ -165,7 +165,7 @@ initialize({
           scientificName: 'Epipactis atrorubens',
           taxonRank: 'species',
           taxa: 5318958,
-          vernacularName: { en: 'Royal Helleborine', nl: 'bruinrode wespenorchis' }
+          vernacularName: { en: 'royal helleborine', nl: 'bruinrode wespenorchis' }
         },
         {
           scientificName: 'Epipactis helleborine',
@@ -184,22 +184,22 @@ initialize({
               vernacularName: { nl: 'duinwespenorchis' }
             }
           ],
-          vernacularName: { en: 'Helleborine', nl: 'brede wespenorchis' }
+          vernacularName: { en: 'helleborine', nl: 'brede wespenorchis' }
         },
         {
           scientificName: 'Epipactis muelleri',
           taxonRank: 'species',
           taxa: 5319022,
-          vernacularName: { en: "Mueller's Epipactis", nl: 'geelgroene wespenorchis' }
+          vernacularName: { en: "Mueller's epipactis", nl: 'geelgroene wespenorchis' }
         },
         {
           scientificName: 'Epipactis palustris',
           taxonRank: 'species',
           taxa: 5319226,
-          vernacularName: { en: 'Marsh Helleborine', nl: 'moeraswespenorchis' }
+          vernacularName: { en: 'marsh helleborine', nl: 'moeraswespenorchis' }
         }
       ],
-      vernacularName: { en: 'Helleborines', nl: 'wespenorchissen' }
+      vernacularName: { en: 'helleborines', nl: 'wespenorchissen' }
     },
     {
       scientificName: 'Goodyera',
@@ -209,10 +209,10 @@ initialize({
           scientificName: 'Goodyera repens',
           taxonRank: 'species',
           taxa: 2840931,
-          vernacularName: { en: 'Lesser Rattlesnake-Plantain', nl: 'dennenorchis' }
+          vernacularName: { en: 'lesser rattlesnake-plantain', nl: 'dennenorchis' }
         }
       ],
-      vernacularName: { en: 'Rattlesnake Plantains' }
+      vernacularName: { en: 'rattlesnake plantains' }
     },
     {
       scientificName: 'Gymnadenia',
@@ -222,13 +222,13 @@ initialize({
           scientificName: 'Gymnadenia conopsea',
           taxonRank: 'species',
           taxa: 7845022,
-          vernacularName: { en: 'Fragrant Orchid', nl: 'grote muggenorchis' }
+          vernacularName: { en: 'fragrant orchid', nl: 'grote muggenorchis' }
         },
         {
           scientificName: 'Gymnadenia densiflora',
           taxonRank: 'species',
           taxa: 2840425,
-          vernacularName: { en: 'Marsh Fragrant-orchid', nl: 'dichte muggenorchis' }
+          vernacularName: { en: 'marsh fragrant-orchid', nl: 'dichte muggenorchis' }
         }
       ],
       vernacularName: { nl: 'muggenorchissen' }
@@ -241,7 +241,7 @@ initialize({
           scientificName: 'Hammarbya paludosa',
           taxonRank: 'species',
           taxa: 2817361,
-          vernacularName: { en: 'Bog Orchid', nl: 'veenmosorchis' }
+          vernacularName: { en: 'bog orchid', nl: 'veenmosorchis' }
         }
       ]
     },
@@ -253,7 +253,7 @@ initialize({
           scientificName: 'Herminium monorchis',
           taxonRank: 'species',
           taxa: 5310578,
-          vernacularName: { en: 'Musk Orchid', nl: 'honingorchis' }
+          vernacularName: { en: 'musk orchid', nl: 'honingorchis' }
         }
       ]
     },
@@ -265,7 +265,7 @@ initialize({
           scientificName: 'Himantoglossum hircinum',
           taxonRank: 'species',
           taxa: 5324951,
-          vernacularName: { en: 'Lizard Orchid', nl: 'bokkenorchis' }
+          vernacularName: { en: 'lizard orchid', nl: 'bokkenorchis' }
         },
         {
           scientificName: 'Himantoglossum robertianum',
@@ -283,10 +283,10 @@ initialize({
           scientificName: 'Liparis loeselii',
           taxonRank: 'species',
           taxa: 5323092,
-          vernacularName: { en: 'Yellow Wide-Lip Orchid', nl: 'groenknolorchis' }
+          vernacularName: { en: 'yellow wide-lip orchid', nl: 'groenknolorchis' }
         }
       ],
-      vernacularName: { en: 'Widelip Orchids' }
+      vernacularName: { en: 'widelip orchids' }
     },
     {
       scientificName: 'Neotinea',
@@ -296,7 +296,7 @@ initialize({
           scientificName: 'Neotinea ustulata',
           taxonRank: 'species',
           taxa: 2812375,
-          vernacularName: { en: 'Burnt-Tip Orchid', nl: 'aangebrande orchis' }
+          vernacularName: { en: 'burnt-tip orchid', nl: 'aangebrande orchis' }
         }
       ]
     },
@@ -309,7 +309,7 @@ initialize({
           taxonRank: 'species',
           taxa: 2816213,
           vernacularName: {
-            en: 'Western Heart-Leaved Twayblade',
+            en: 'western heart-leaved twayblade',
             nl: 'kleine keverorchis'
           }
         },
@@ -317,13 +317,13 @@ initialize({
           scientificName: 'Neottia nidus-avis',
           taxonRank: 'species',
           taxa: 2816176,
-          vernacularName: { en: "Bird's-Nest Orchid", nl: 'vogelnestje' }
+          vernacularName: { en: "bird's-nest orchid", nl: 'vogelnestje' }
         },
         {
           scientificName: 'Neottia ovata',
           taxonRank: 'species',
           taxa: 2816250,
-          vernacularName: { en: 'Oval-Leaved Twayblade', nl: 'grote keverorchis' }
+          vernacularName: { en: 'oval-leaved twayblade', nl: 'grote keverorchis' }
         }
       ]
     },
@@ -347,10 +347,10 @@ initialize({
           scientificName: 'Ophrys insectifera',
           taxonRank: 'species',
           taxa: 2792588,
-          vernacularName: { en: 'Insect Bearing Ophrys', nl: 'vliegenorchis' }
+          vernacularName: { en: 'insect bearing ophrys', nl: 'vliegenorchis' }
         }
       ],
-      vernacularName: { en: 'Spider-Orchid' }
+      vernacularName: { en: 'spider-orchid' }
     },
     {
       scientificName: 'Orchis',
@@ -360,7 +360,7 @@ initialize({
           scientificName: 'Orchis anthropophora',
           taxonRank: 'species',
           taxa: 2849624,
-          vernacularName: { en: 'Man Orchid', nl: 'poppenorchis' }
+          vernacularName: { en: 'man orchid', nl: 'poppenorchis' }
         },
         {
           scientificName: 'Orchis ×hybrida',
@@ -371,13 +371,13 @@ initialize({
           scientificName: 'Orchis mascula',
           taxonRank: 'species',
           taxa: 2849427,
-          vernacularName: { en: 'Early-Purple Orchid', nl: 'mannetjesorchis' }
+          vernacularName: { en: 'early-purple orchid', nl: 'mannetjesorchis' }
         },
         {
           scientificName: 'Orchis militaris',
           taxonRank: 'species',
           taxa: 2809968,
-          vernacularName: { en: 'Soldier Orchid', nl: 'soldaatje' }
+          vernacularName: { en: 'soldier orchid', nl: 'soldaatje' }
         },
         {
           scientificName: 'Orchis purpurea',
@@ -389,7 +389,7 @@ initialize({
           scientificName: 'Orchis simia',
           taxonRank: 'species',
           taxa: 2812415,
-          vernacularName: { en: 'Monkey Orchid', nl: 'aapjesorchis' }
+          vernacularName: { en: 'monkey orchid', nl: 'aapjesorchis' }
         }
       ]
     },
@@ -413,7 +413,7 @@ initialize({
           vernacularName: { en: 'greater butterfly-orchid', nl: 'bergnachtorchis' }
         }
       ],
-      vernacularName: { en: 'Fringed Orchid' }
+      vernacularName: { en: 'fringed orchid' }
     },
     {
       scientificName: 'Pseudorchis',
@@ -436,7 +436,7 @@ initialize({
           scientificName: 'Serapias vomeracea',
           taxonRank: 'species',
           taxa: 5314764,
-          vernacularName: { en: 'Long-lipped Tongue-orchid', nl: 'lange tongorchis' }
+          vernacularName: { en: 'long-lipped tongue-orchid', nl: 'lange tongorchis' }
         }
       ]
     },
@@ -448,15 +448,15 @@ initialize({
           scientificName: 'Spiranthes aestivalis',
           taxonRank: 'species',
           taxa: 2805343,
-          vernacularName: { en: 'summer ladiestresses', nl: 'zomerschroeforchis' }
+          vernacularName: { en: "summer ladies'-tresses", nl: 'zomerschroeforchis' }
         },
         {
           scientificName: 'Spiranthes cernua',
           taxonRank: 'species',
           taxa: 2805420,
           vernacularName: {
-            en: "Dropping Ladies'-Tresses",
-            nl: 'Knikkende schroeforchis'
+            en: "dropping ladies'-tresses",
+            nl: 'knikkende schroeforchis'
           }
         },
         {
@@ -464,30 +464,30 @@ initialize({
           taxonRank: 'species',
           taxa: 2805336,
           vernacularName: {
-            en: "Wide-Leaved Ladies'-Tresses",
-            nl: 'Glansschroeforchis'
+            en: "wide-leaved ladies'-tresses",
+            nl: 'glansschroeforchis'
           }
         },
         {
           scientificName: 'Spiranthes odorata',
           taxonRank: 'species',
           taxa: 2805363,
-          vernacularName: { en: "marsh lady's tresses" }
+          vernacularName: { en: "marsh ladies'-tresses" }
         },
         {
           scientificName: 'Spiranthes romanzoffiana',
           taxonRank: 'species',
           taxa: 2805404,
-          vernacularName: { en: "American Lady'S Tresses", nl: 'Groene schroeforchis' }
+          vernacularName: { en: "American ladies'-tresses", nl: 'groene schroeforchis' }
         },
         {
           scientificName: 'Spiranthes spiralis',
           taxonRank: 'species',
           taxa: 2805322,
-          vernacularName: { en: 'autumn ladiestresses', nl: 'herfstschroeforchis' }
+          vernacularName: { en: "autumn ladies'-tresses", nl: 'herfstschroeforchis' }
         }
       ],
-      vernacularName: { en: "lady's-tresses", nl: 'schroeforchissen' }
+      vernacularName: { en: "ladies'-tresses", nl: 'schroeforchissen' }
     }
   ]
 })
