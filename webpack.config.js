@@ -6,6 +6,7 @@ const entry = {
     'dutch-butterflies': './data/dutch-butterflies.js',
     'dutch-orchids': './data/dutch-orchids.js',
     'dutch-pentatomoidea': './data/dutch-pentatomoidea.js',
+    'eu-bee-genera': './data/eu-bee-genera.js',
     'flora': './data/flora.js',
     'inat': './data/inat.js',
     'invasive-mollusca': './data/invasive-mollusca.js',
