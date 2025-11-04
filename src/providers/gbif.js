@@ -1,6 +1,7 @@
 import { Provider } from './provider.js'
 import { Taxon } from '../taxon.js'
 import { formatUrl } from '../util.js'
+import md5 from 'md5'
 
 export class GbifProvider extends Provider {
     async fetchQuestions (category, options) {
@@ -86,11 +87,11 @@ export class GbifProvider extends Provider {
         return {
             taxon: new Taxon(taxon),
             url: `https://www.gbif.org/occurrence/${result.key}`,
-            images: result.media.map(media => this._parseMedia(media)).filter(media => media !== null)
+            images: result.media.map(media => this._parseMedia(media, result.key)).filter(media => media !== null)
         }
     }
 
-    _parseMedia (media) {
+    _parseMedia (media, key) {
         if (media.type !== 'StillImage' || !media.identifier) {
             return null
         }
@@ -105,7 +106,10 @@ export class GbifProvider extends Provider {
             image.src = image.src.replace('original', 'large')
             image.thumbnail = image.thumbnail.replace('original', 'square')
         } else if (image.src.startsWith('https://observation.org/photos/')) {
-            image.thumbnail = image.thumbnail + '?w=200&h=150'
+            // Temporary: use GBIF cache to circumvent Observation.org CAPTCHAs
+            image.src = `https://api.gbif.org/v1/image/cache/occurrence/${key}/media/${md5(media.identifier)}`
+            image.thumbnail = `https://api.gbif.org/v1/image/cache/fit-in/200x150/occurrence/${key}/media/${md5(media.identifier)}`
+            // image.thumbnail = image.thumbnail + '?w=200&h=150'
         }
 
         if (media.license) {
