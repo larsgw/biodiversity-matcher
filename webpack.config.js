@@ -10,6 +10,7 @@ const entry = {
     'flora': './data/flora.js',
     'inat': './data/inat.js',
     'invasive-mollusca': './data/invasive-mollusca.js',
+    'limburg-pollinators': './data/limburg-pollinators.js',
     'poland-vegetation': './data/poland-vegetation.js',
     'pollinators': './data/pollinators.js',
     'trees': './data/trees.js',
