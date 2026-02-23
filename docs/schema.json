@@ -1,0 +1,277 @@
+{
+  "$id": "https://example.com/biodiversity-matcher-quiz.json",
+  "$schema": "http://json-schema.org/draft/2020-12/schema",
+  "title": "Biodiversity Matcher Quiz",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "provider": {
+      "$ref": "#/$defs/provider",
+      "description": "Question provider configuration."
+    },
+    "settings": {
+      "$ref": "#/$defs/settings",
+      "description": "Quiz or provider-specific user settings."
+    },
+    "taxa": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/taxon"
+      },
+      "description": "List of language codes."
+    }
+  },
+  "required": [
+    "metadata",
+    "provider",
+    "taxa"
+  ],
+  "$defs": {
+    "metadata": {
+      "title": "Metadata",
+      "type": "object",
+      "properties": {
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "description": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of language codes."
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "languages"
+      ]
+    },
+    "provider": {
+      "title": "Provider",
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "#/$defs/providerGbif"
+        },
+        {
+          "$ref": "#/$defs/providerINaturalist"
+        },
+        {
+          "$ref": "#/$defs/providerWikimedia"
+        }
+      ]
+    },
+    "providerGbif": {
+      "title": "GBIF provider",
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "gbif"
+        },
+        "defaultOptions": {
+          "type": "object",
+          "properties": {
+            "country": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "licenses": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "providerINaturalist": {
+      "title": "iNaturalist provider",
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "inaturalist"
+        },
+        "defaultOptions": {
+          "type": "object",
+          "properties": {
+            "placeId": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "licenses": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "providerWikimedia": {
+      "title": "Wikimedia Commons provider",
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "wikimedia"
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "settings": {
+      "title": "Settings",
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/setting"
+      },
+      "description": "An object with a setting names as keys, and setting configuration as values."
+    },
+    "setting": {
+      "title": "Setting",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Option key to pass along to the provider."
+        },
+        "label": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/settingOption"
+          }
+        },
+        "value": {
+          "type": "string",
+          "description": "Default option to set."
+        },
+        "defaultEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to enable for all taxa by default."
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "options"
+      ]
+    },
+    "settingOption": {
+      "title": "Setting option",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Option id/value."
+        },
+        "label": {
+          "$ref": "#/$defs/localizedText"
+        }
+      },
+      "required": [
+        "id",
+        "label"
+      ]
+    },
+    "taxon": {
+      "title": "Taxon",
+      "type": "object",
+      "properties": {
+        "scientificName": {
+          "type": "string"
+        },
+        "vernacularName": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "taxonRank": {
+          "type": "string",
+          "description": "Lowercase rank, used to format scientific names.",
+          "examples": [
+            "genus",
+            "species"
+          ]
+        },
+        "taxa": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "integer"
+                  }
+                ]
+              }
+            }
+          ],
+          "description": "Identifier(s) used to fetch questions."
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/taxon"
+          },
+          "description": "Child taxa."
+        },
+        "settingsEnabled": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "boolean"
+          },
+          "description": "Enable or disable a setting for this taxon and its subtaxa."
+        }
+      }
+    },
+    "localizedText": {
+      "title": "Localized text",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "An object with a two-letter language code as keys, and the text in that language as values.",
+      "examples": [
+        {
+          "en": "English text",
+          "nl": "Dutch text"
+        }
+      ]
+    }
+  }
+}
