@@ -355,224 +355,242 @@ initialize({
     },
     {
       scientificName: 'Syrphidae',
-      vernacularName: { en: '', nl: 'zweefvliegen' },
+      vernacularName: { en: 'hoverfly', nl: 'zweefvlieg' },
       taxonRank: 'family',
       children: [
         {
-          scientificName: 'Baccha elongata',
-          vernacularName: { en: 'common dainty', nl: 'vliegende speld' },
-          taxonRank: 'species',
-          taxa: 1536559
-        },
-        {
-          scientificName: 'Callicera aurata',
-          vernacularName: { nl: 'goude glanszweefvlieg' },
-          taxonRank: 'species',
-          taxa: 5070404
-        },
-        {
-          scientificName: 'Chrysotoxum',
-          vernacularName: { nl: 'fopwesp' },
-          taxonRank: 'genus',
-          taxa: 1535870
-        },
-        {
-          scientificName: 'Episyrphus balteatus',
-          vernacularName: { en: 'marmalade hoverfly', nl: 'snor-/marmelade-/pyjamazweefvlieg' },
-          taxonRank: 'species',
-          taxa: 1536449
-        },
-        {
-          scientificName: 'Eristalis',
-          vernacularName: { en: 'drone fly', nl: 'bijvlieg' },
-          taxonRank: 'genus',
-          taxa: [1541146, 1541339, 1541164, 1541192, 1541171, 1541321, 1541277, 1540351, 1541245, 1541325],
+          scientificName: 'Eristalinae',
+          taxonRank: 'subfamily',
           children: [
             {
-              scientificName: 'Eristalis intricaria',
-              vernacularName: { nl: 'hommelbijvlieg' },
+              scientificName: 'Callicera aurata',
+              vernacularName: { nl: 'goude glanszweefvlieg' },
               taxonRank: 'species',
-              taxa: 1541262
+              taxa: 5070404
             },
             {
-              scientificName: 'Eristalis nemorum',
-              vernacularName: { en: 'orange-spined drone fly', nl: 'puntbijvlieg' },
-              taxonRank: 'species',
-              taxa: 6098383
+              scientificName: 'Eristalis',
+              vernacularName: { en: 'drone fly', nl: 'bijvlieg' },
+              taxonRank: 'genus',
+              taxa: [1541146, 1541339, 1541164, 1541192, 1541171, 1541321, 1541277, 1540351, 1541245, 1541325],
+              children: [
+                {
+                  scientificName: 'Eristalis intricaria',
+                  vernacularName: { nl: 'hommelbijvlieg' },
+                  taxonRank: 'species',
+                  taxa: 1541262
+                },
+                {
+                  scientificName: 'Eristalis nemorum',
+                  vernacularName: { en: 'orange-spined drone fly', nl: 'puntbijvlieg' },
+                  taxonRank: 'species',
+                  taxa: 6098383
+                },
+                {
+                  scientificName: 'Eristalis pertinax',
+                  vernacularName: { nl: 'kegelbijvlieg' },
+                  taxonRank: 'species',
+                  taxa: 1541116
+                },
+                {
+                  scientificName: 'Eristalis tenax',
+                  vernacularName: { en: 'common  drone fly', nl: 'blinde bij' },
+                  taxonRank: 'species',
+                  taxa: 1541217
+                }
+              ]
             },
             {
-              scientificName: 'Eristalis pertinax',
-              vernacularName: { nl: 'kegelbijvlieg' },
-              taxonRank: 'species',
-              taxa: 1541116
+              scientificName: 'Helophilus',
+              vernacularName: { nl: 'pendelzweefvlieg' },
+              taxonRank: 'genus',
+              children: [
+                {
+                  scientificName: 'Helophilus hybridus',
+                  vernacularName: { nl: 'moeraspendelzweefvlieg' },
+                  taxonRank: 'species',
+                  taxa: 5071368
+                },
+                {
+                  scientificName: 'Helophilus pendulus',
+                  vernacularName: { nl: 'gewone pendelzweefvlieg' },
+                  taxonRank: 'species',
+                  taxa: 5071352
+                },
+                {
+                  scientificName: 'Helophilus trivittatus',
+                  vernacularName: { nl: 'citroenspendelzweefvlieg' },
+                  taxonRank: 'species',
+                  taxa: 5071382
+                }
+              ]
             },
             {
-              scientificName: 'Eristalis tenax',
-              vernacularName: { en: 'common  drone fly', nl: 'blinde bij' },
+              scientificName: 'Lejogaster metallina',
+              vernacularName: { nl: 'gewoon glimlijfje' },
               taxonRank: 'species',
-              taxa: 1541217
+              taxa: 1537380
+            },
+            {
+              scientificName: 'Merodon',
+              vernacularName: { nl: 'narcisvlieg' },
+              taxonRank: 'genus',
+              taxa: 1544143
+            },
+            {
+              scientificName: 'Myathropa florea',
+              vernacularName: { en: 'batman hoverfly', nl: 'doodskopzweefvlieg' },
+              taxonRank: 'species',
+              taxa: 4516754
+            },
+            {
+              scientificName: 'Orthonevra',
+              vernacularName: { en: 'mucksucker', nl: 'glimmer' },
+              taxonRank: 'genus',
+              taxa: 1537455
+            },
+            {
+              scientificName: 'Rhingia',
+              vernacularName: { nl: 'snuitvlieg' },
+              taxonRank: 'genus',
+              children: [
+                {
+                  scientificName: 'Rhingia campestris',
+                  vernacularName: { nl: 'gewone snuitvlieg' },
+                  taxonRank: 'species',
+                  taxa: 1537412
+                },
+                {
+                  scientificName: 'Rhingia rostrata',
+                  vernacularName: { nl: 'rode snuitvlieg' },
+                  taxonRank: 'species',
+                  taxa: 8170685
+                }
+              ]
+            },
+            {
+              scientificName: 'Volucella zonaria',
+              vernacularName: { en: 'hornet hoverfly', nl: 'stadsreus' },
+              taxonRank: 'species',
+              taxa: 1541832
             }
           ]
         },
         {
-          scientificName: 'Eupeodes',
-          vernacularName: { nl: 'kommazwever' },
-          taxonRank: 'genus',
-          taxa: 1540675
-        },
-        {
-          scientificName: 'Helophilus',
-          vernacularName: { nl: 'pendelzweefvlieg' },
-          taxonRank: 'genus',
+          scientificName: 'Pipizinae',
+          taxonRank: 'subfamily',
           children: [
             {
-              scientificName: 'Helophilus hybridus',
-              vernacularName: { nl: 'moeraspendelzweefvlieg' },
-              taxonRank: 'species',
-              taxa: 5071368
+              scientificName: 'Neocnemodon',
+              vernacularName: { nl: 'platbek' },
+              taxonRank: 'genus',
+              taxa: 1536263
             },
             {
-              scientificName: 'Helophilus pendulus',
-              vernacularName: { nl: 'gewone pendelzweefvlieg' },
-              taxonRank: 'species',
-              taxa: 5071352
+              scientificName: 'Pipiza',
+              vernacularName: { en: 'pithead', nl: 'platbek' },
+              taxonRank: 'genus',
+              taxa: 1536264
             },
             {
-              scientificName: 'Helophilus trivittatus',
-              vernacularName: { nl: 'citroenspendelzweefvlieg' },
-              taxonRank: 'species',
-              taxa: 5071382
+              scientificName: 'Pipizella',
+              vernacularName: { en: 'flatface', nl: 'langsprietplatbek' },
+              taxonRank: 'genus',
+              taxa: 1532919
             }
           ]
         },
         {
-          scientificName: 'Lapposyrphus lapponicus',
-          vernacularName: { nl: 'boogkommazweefvlieg' },
-          taxonRank: 'species',
-          taxa: 8183385
-        },
-        {
-          scientificName: 'Lejogaster metallina',
-          vernacularName: { nl: 'gewoon glimlijfje' },
-          taxonRank: 'species',
-          taxa: 1537380
-        },
-        {
-          scientificName: 'Melanostoma',
-          vernacularName: { nl: 'driehoekzweefvlieg' },
-          taxonRank: 'genus',
-          taxa: 1533169
-        },
-        {
-          scientificName: 'Merodon',
-          vernacularName: { nl: 'narcisvlieg' },
-          taxonRank: 'genus',
-          taxa: 1544143
-        },
-        {
-          scientificName: 'Myathropa florea',
-          vernacularName: { en: 'batman hoverfly', nl: 'doodskopzweefvlieg' },
-          taxonRank: 'species',
-          taxa: 4516754
-        },
-        {
-          scientificName: 'Neocnemodon',
-          vernacularName: { nl: 'platbek' },
-          taxonRank: 'genus',
-          taxa: 1536263
-        },
-        {
-          scientificName: 'Orthonevra',
-          vernacularName: { en: 'mucksucker', nl: 'glimmer' },
-          taxonRank: 'genus',
-          taxa: 1537455
-        },
-        {
-          scientificName: 'Paragus',
-          vernacularName: { en: 'grass skimmer', nl: 'krieltje' },
-          taxonRank: 'genus',
-          taxa: 1535699
-        },
-        {
-          scientificName: 'Pipiza',
-          vernacularName: { en: 'pithead', nl: 'platbek' },
-          taxonRank: 'genus',
-          taxa: 1536264
-        },
-        {
-          scientificName: 'Pipizella',
-          vernacularName: { en: 'flatface', nl: 'langsprietplatbek' },
-          taxonRank: 'genus',
-          taxa: 1532919
-        },
-        {
-          scientificName: 'Platycheirus',
-          vernacularName: { en: 'sedgesitter', nl: 'platvoetje' },
-          taxonRank: 'genus',
-          taxa: 1542996,
+          scientificName: 'Syrphinae',
+          taxonRank: 'subfamily',
           children: [
             {
-              scientificName: 'Platycheirus albimanus',
-              vernacularName: { en: 'grey-spotted sedgesitter', nl: 'micaplatvoetje' },
+              scientificName: 'Baccha elongata',
+              vernacularName: { en: 'common dainty', nl: 'vliegende speld' },
               taxonRank: 'species',
-              taxa: 4516769
-            }
-          ]
-        },
-        {
-          scientificName: 'Rhingia',
-          vernacularName: { nl: 'snuitvlieg' },
-          taxonRank: 'genus',
-          children: [
-            {
-              scientificName: 'Rhingia campestris',
-              vernacularName: { nl: 'gewone snuitvlieg' },
-              taxonRank: 'species',
-              taxa: 1537412
+              taxa: 1536559
             },
             {
-              scientificName: 'Rhingia rostrata',
-              vernacularName: { nl: 'rode snuitvlieg' },
+              scientificName: 'Chrysotoxum',
+              vernacularName: { nl: 'fopwesp' },
+              taxonRank: 'genus',
+              taxa: 1535870
+            },
+            {
+              scientificName: 'Episyrphus balteatus',
+              vernacularName: { en: 'marmalade hoverfly', nl: 'snor-/marmelade-/pyjamazweefvlieg' },
               taxonRank: 'species',
-              taxa: 8170685
+              taxa: 1536449
+            },
+            {
+              scientificName: 'Eupeodes',
+              vernacularName: { nl: 'kommazwever' },
+              taxonRank: 'genus',
+              taxa: 1540675
+            },
+            {
+              scientificName: 'Lapposyrphus lapponicus',
+              vernacularName: { nl: 'boogkommazweefvlieg' },
+              taxonRank: 'species',
+              taxa: 8183385
+            },
+            {
+              scientificName: 'Melanostoma',
+              vernacularName: { nl: 'driehoekzweefvlieg' },
+              taxonRank: 'genus',
+              taxa: 1533169
+            },
+            {
+              scientificName: 'Paragus',
+              vernacularName: { en: 'grass skimmer', nl: 'krieltje' },
+              taxonRank: 'genus',
+              taxa: 1535699
+            },
+            {
+              scientificName: 'Platycheirus',
+              vernacularName: { en: 'sedgesitter', nl: 'platvoetje' },
+              taxonRank: 'genus',
+              taxa: 1542996,
+              children: [
+                {
+                  scientificName: 'Platycheirus albimanus',
+                  vernacularName: { en: 'grey-spotted sedgesitter', nl: 'micaplatvoetje' },
+                  taxonRank: 'species',
+                  taxa: 4516769
+                }
+              ]
+            },
+            {
+              scientificName: 'Scaeva',
+              vernacularName: { en: 'smoothwing', nl: 'halvemaanzweefvlieg' },
+              taxonRank: 'genus',
+              taxa: 1537685
+            },
+            {
+              scientificName: 'Sphaerophoria',
+              vernacularName: { en: 'globetail', nl: 'langlijf' },
+              taxonRank: 'genus',
+              taxa: 1539106
+            },
+            {
+              scientificName: 'Syritta pipiens',
+              vernacularName: { en: 'thick-legged hoverfly', nl: 'menuetzweefvlieg' },
+              taxonRank: 'species',
+              taxa: 1544431
+            },
+            {
+              scientificName: 'Syrphus',
+              vernacularName: { en: 'flower fly', nl: 'bandzweefvlieg' },
+              taxonRank: 'genus',
+              taxa: 1444606
+            },
+            {
+              scientificName: 'Xanthogramma/Philhelius',
+              vernacularName: { en: 'dayglower', nl: 'citroenzweefvlieg' },
+              taxonRank: 'genus',
+              taxa: 4797847
             }
           ]
-        },
-        {
-          scientificName: 'Scaeva',
-          vernacularName: { en: 'smoothwing', nl: 'halvemaanzweefvlieg' },
-          taxonRank: 'genus',
-          taxa: 1537685
-        },
-        {
-          scientificName: 'Sphaerophoria',
-          vernacularName: { en: 'globetail', nl: 'langlijf' },
-          taxonRank: 'genus',
-          taxa: 1539106
-        },
-        {
-          scientificName: 'Syritta pipiens',
-          vernacularName: { en: 'thick-legged hoverfly', nl: 'menuetzweefvlieg' },
-          taxonRank: 'species',
-          taxa: 1544431
-        },
-        {
-          scientificName: 'Syrphus',
-          vernacularName: { en: 'flower fly', nl: 'bandzweefvlieg' },
-          taxonRank: 'genus',
-          taxa: 1444606
-        },
-        {
-          scientificName: 'Volucella zonaria',
-          vernacularName: { en: 'hornet hoverfly', nl: 'stadsreus' },
-          taxonRank: 'species',
-          taxa: 1541832
-        },
-        {
-          scientificName: 'Xanthogramma/Philhelius',
-          vernacularName: { en: 'dayglower', nl: 'citroenzweefvlieg' },
-          taxonRank: 'genus',
-          taxa: 4797847
         }
       ]
     }
