@@ -291,7 +291,7 @@ initialize({
               scientificName: 'Osmia',
               vernacularName: { en: 'mason bee', nl: 'metselbij' },
               taxonRank: 'genus',
-              taxa: 1337664,
+              taxa: [6096937, 5039340, 5039039, 5039370, 5039053, 5039158, 5039435],
               children: [
                 {
                   scientificName: 'Osmia bicornis',
