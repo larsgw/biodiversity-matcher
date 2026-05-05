@@ -79,7 +79,7 @@ export class GbifProvider extends Provider {
         }
 
         if (!taxon.scientificName && result.infraspecificEpithet) {
-            taxon.scientificName = taxon.scientificName + ' ' + result.infraspecificEpithet
+            taxon.scientificName = result.species + ' ' + result.infraspecificEpithet
         } else if (!taxon.scientificName) {
             taxon.scientificName = result.scientificName
         }
