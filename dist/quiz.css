@@ -202,6 +202,14 @@ body > * {
   overflow-y: auto;
 }
 
+.answers-option .text-muted {
+  color: #4f4f4f;
+}
+
+.answers-option.selected .text-muted {
+  color: inherit;
+}
+
 .form-group {
   display: flex;
   margin-bottom: 1em;

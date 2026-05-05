@@ -37,7 +37,7 @@ export class Taxon {
     }
 
     if (this.vernacularName[locale] && this.scientificName !== this.vernacularName[locale]) {
-      label += label ? ` (${this.vernacularName[locale]})` : this.vernacularName[locale]
+      label += label ? ` <span class="text-muted">(${this.vernacularName[locale]})</span>` : this.vernacularName[locale]
     }
 
     return label
