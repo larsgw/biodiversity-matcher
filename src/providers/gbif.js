@@ -18,8 +18,10 @@ export class GbifProvider extends Provider {
                 mediaType: 'StillImage',
                 taxonKey: options.taxon.taxa,
                 country: options.country,
+                month: options.month,
                 license: options.licenses,
                 occurrenceStatus: 'PRESENT',
+                basisOfRecord: options.basisOfRecord,
                 limit: 50,
                 offset: this.cache[category].offset
             }

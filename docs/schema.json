@@ -85,7 +85,19 @@
                 "type": "string"
               }
             },
+            "month": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
             "licenses": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "basisOfRecord": {
               "type": "array",
               "items": {
                 "type": "string"
