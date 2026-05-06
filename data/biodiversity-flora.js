@@ -295,7 +295,7 @@ initialize({
                           scientificName: 'Rhamnus frangula',
                           vernacularName: { en: 'alder buckthorn' },
                           taxonRank: 'species',
-                          taxa: 7273688
+                          taxa: 3039454
                         }
                       ]
                     },
