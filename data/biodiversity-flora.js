@@ -292,7 +292,7 @@ initialize({
                       taxonRank: 'family',
                       children: [
                         {
-                          scientificName: 'Rhamnus frangula',
+                          scientificName: 'Frangula alnus',
                           vernacularName: { en: 'alder buckthorn' },
                           taxonRank: 'species',
                           taxa: 3039454
