@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const entry = {
     'arthropods': './data/arthropods.js',
+    'biodiversity-fauna': './data/biodiversity-fauna.js',
     'biodiversity-flora': './data/biodiversity-flora.js',
     'dutch-butterflies': './data/dutch-butterflies.js',
     'dutch-orchids': './data/dutch-orchids.js',
