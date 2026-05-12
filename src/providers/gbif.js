@@ -31,6 +31,8 @@ export class GbifProvider extends Provider {
                 urlOptions.lifeStage = 'Adult'
             } else if (options.lifestage === 'nymph') {
                 urlOptions.lifeStage = 'Nymph'
+            } else if (options.lifestage === 'larva') {
+                urlOptions.lifeStage = 'Larva'
             }
 
             // Fetch data
