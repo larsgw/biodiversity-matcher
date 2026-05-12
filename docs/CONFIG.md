@@ -28,7 +28,7 @@ This document details the config format used to define quizzes.
 
 ### Provider types
 
-- `'gbif'` takes questions from [GBIF](https://www.gbif.org/) occurrences. Supports default options of `country` (array of uppercase country codes) and `licenses` (array of license codes).
+- `'gbif'` takes questions from [GBIF](https://www.gbif.org/) occurrences. Supports default options of `country` (array of uppercase country codes), `continent` (array of uppercase continent names), `month` (array of month numbers), `basisOfRecord` (array of basis of record values), and `licenses` (array of license codes).
 - `'inaturalist'` takes questions from [iNaturalist](https://www.inaturalist.org/) observations. Supports default options of `placeId` (integer or string) and `licenses` (array of license codes). Supports [settings](#settings) of `month` (array of numbers), `season` (`'summer'`/`'winter'`/`'any'`), and `lifestage` (`'nymph'`, `'larva'`, `'adult'`, `'any'`).
 - `'wikimedia'` takes questions from [Wikimedia Commons](https://commons.wikimedia.org/) by fetching the main [image (P18)](http://www.wikidata.org/entity/P18) associated with subtaxa.
 
