@@ -85,6 +85,12 @@
                 "type": "string"
               }
             },
+            "continent": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
             "month": {
               "type": "array",
               "items": {
